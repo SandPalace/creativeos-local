@@ -1,0 +1,8 @@
+# Estado personal de Obsidian (cada quien tiene su propio layout)
+.obsidian/workspace*.json
+# Conexiones y bases locales: se crean en tu máquina
+.mcp.json
+datos/*.db
+.env
+.env.*
+.DS_Store

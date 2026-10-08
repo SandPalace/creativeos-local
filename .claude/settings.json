@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "WebSearch",
+      "WebFetch",
+      "Bash(date *)",
+      "Bash(sqlite3 *)",
+      "Bash(open *)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_take_screenshot"
+    ],
+    "ask": [
+      "Bash(git push *)",
+      "mcp__meta-ads__ads_activate_entity",
+      "mcp__meta-ads__ads_update_entity",
+      "mcp__meta-ads__ads_create_campaign",
+      "mcp__meta-ads__ads_create_ad_set",
+      "mcp__meta-ads__ads_create_ad",
+      "mcp__meta-ads__ads_boost_ig_post"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Bash(rm -rf *)"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+filters:
+  or:
+    - 'tipo == "pieza"'
+    - 'tipo == "creativo"'
+
+properties:
+  estado:
+    displayName: Estado
+  fecha:
+    displayName: Fecha
+  dia:
+    displayName: Día
+  aprobado_por:
+    displayName: Aprobó
+
+views:
+  - type: table
+    name: Calendario
+    filters:
+      and:
+        - 'tipo == "pieza"'
+    order:
+      - file.name
+      - cliente
+      - fecha
+      - dia
+      - canal
+      - formato
+      - objetivo
+      - estado
+      - aprobado_por
+
+  - type: table
+    name: Por aprobar
+    filters:
+      and:
+        - 'tipo == "pieza"'
+        - 'estado == "propuesta"'
+    order:
+      - file.name
+      - cliente
+      - fecha
+      - canal
+      - objetivo
+
+  - type: table
+    name: Bloqueadas
+    filters:
+      and:
+        - 'estado == "bloqueada"'
+    order:
+      - file.name
+      - cliente
+      - fecha
+      - pregunta
+
+  - type: table
+    name: Creativos por revisar
+    filters:
+      and:
+        - 'tipo == "creativo"'
+        - 'estado == "propuesta-sin-revisar"'
+    order:
+      - file.name
+      - cliente
+      - pieza
+      - version
+      - modelo

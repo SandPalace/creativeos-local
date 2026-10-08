@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reporte · CLIENTE</title>
+<style>
+  :root {
+    --marca: #3B2A20;      /* reemplazar con el hex principal del cliente */
+    --acento: #C86B3C;     /* reemplazar con el acento del cliente */
+    --fondo: #FAF7F2;
+    --tarjeta: #FFFFFF;
+    --texto: #1C1917;
+    --tenue: #78716C;
+    --borde: #E7E5E4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --fondo: #12100E; --tarjeta: #1C1917; --texto: #F5F5F4; --tenue: #A8A29E; --borde: #292524;
+    }
+  }
+  :root[data-theme="dark"] {
+    --fondo: #12100E; --tarjeta: #1C1917; --texto: #F5F5F4; --tenue: #A8A29E; --borde: #292524;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--fondo); color: var(--texto);
+         font: 16px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 960px; margin: 0 auto; padding: 32px 16px 64px; }
+  header { border-bottom: 3px solid var(--acento); padding-bottom: 16px; margin-bottom: 32px; }
+  h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); margin: 0 0 4px; color: var(--marca); }
+  :root[data-theme="dark"] h1 { color: var(--texto); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) h1 { color: var(--texto); } }
+  h2 { font-size: 1.15rem; margin: 40px 0 12px; }
+  .meta { color: var(--tenue); font-size: .9rem; }
+  .conclusion { font-size: 1.25rem; font-weight: 600; margin: 0 0 24px; }
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+  .kpi { background: var(--tarjeta); border: 1px solid var(--borde); border-radius: 12px; padding: 16px; }
+  .kpi .valor { font-size: 1.8rem; font-weight: 700; }
+  .kpi .etiqueta { color: var(--tenue); font-size: .85rem; }
+  small.fuente { display: block; color: var(--tenue); font-size: .75rem; margin-top: 6px; }
+  .tabla { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; background: var(--tarjeta); border-radius: 12px; overflow: hidden; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--borde); font-size: .92rem; }
+  th { color: var(--tenue); font-weight: 600; }
+  .bloqueada { color: #B91C1C; font-weight: 600; }
+  .barras { display: grid; gap: 8px; }
+  .barra { display: grid; grid-template-columns: 90px 1fr 70px; align-items: center; gap: 8px; font-size: .9rem; }
+  .barra .pista { background: var(--borde); border-radius: 6px; height: 14px; }
+  .barra .relleno { background: var(--acento); height: 100%; border-radius: 6px; }
+  .sin-dato { color: var(--tenue); font-style: italic; }
+  footer { margin-top: 48px; color: var(--tenue); font-size: .8rem; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>CLIENTE · Plan del periodo</h1>
+    <div class="meta">Periodo AAAA-MM-DD → AAAA-MM-DD · Generado AAAA-MM-DD · Estado: propuesta</div>
+  </header>
+
+  <!-- 1. La conclusión en una frase -->
+  <p class="conclusion">Una frase con lo más importante que el director debe saber.</p>
+
+  <!-- 2. Tres cifras clave. Cada una con su fuente, o "sin dato". -->
+  <section class="kpis">
+    <div class="kpi">
+      <div class="etiqueta">Objetivo #1</div>
+      <div class="valor">10 mensajes</div>
+      <small class="fuente">Fuente: brief.md</small>
+    </div>
+    <div class="kpi">
+      <div class="etiqueta">Piezas en el periodo</div>
+      <div class="valor">6</div>
+      <small class="fuente">Fuente: notas en piezas/</small>
+    </div>
+    <div class="kpi">
+      <div class="etiqueta">Costo por resultado</div>
+      <div class="valor sin-dato">sin dato</div>
+      <small class="fuente">Aún no hay métricas del periodo</small>
+    </div>
+  </section>
+
+  <!-- 3. Detalle -->
+  <h2>Calendario</h2>
+  <div class="tabla">
+    <table>
+      <thead><tr><th>Id</th><th>Fecha</th><th>Canal · formato</th><th>Objetivo</th><th>Estado</th></tr></thead>
+      <tbody>
+        <tr><td>P01</td><td>2026-10-14 (miércoles)</td><td>IG · carrusel 4:5</td><td>#1</td><td>propuesta</td></tr>
+        <tr><td>P02</td><td>2026-10-16 (viernes)</td><td>IG · reel 9:16</td><td>#2</td><td class="bloqueada">BLOQUEADA — falta horario</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 4. Gráfica sin librerías: barras CSS. El ancho = valor / máximo. Ordenar por costo por resultado. -->
+  <h2>Costo por resultado por pieza (MXN)</h2>
+  <div class="barras">
+    <div class="barra"><span>P01</span><div class="pista"><div class="relleno" style="width:30%"></div></div><span>12.10</span></div>
+    <div class="barra"><span>P03</span><div class="pista"><div class="relleno" style="width:100%"></div></div><span>40.00</span></div>
+  </div>
+  <small class="fuente">Fuente: datos/agencia.db — consulta en la skill metricas-sqlite (EJEMPLO, reemplazar)</small>
+
+  <h2>Recomendaciones</h2>
+  <ul>
+    <li>Recomendación concreta, con la cifra que la sostiene.</li>
+  </ul>
+
+  <footer>Cada cifra de este reporte cita su fuente. "sin dato" significa que no se midió; no es cero.</footer>
+</main>
+</body>
+</html>
