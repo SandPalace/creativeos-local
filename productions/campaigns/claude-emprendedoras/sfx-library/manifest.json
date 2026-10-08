@@ -1,0 +1,212 @@
+[
+  {
+    "file": "boom-deep-01.mp3",
+    "wav": "boom-deep-01.wav",
+    "archetype": "deep boom / sub impact",
+    "source_url": "https://freesound.org/people/brktkrgll/sounds/856174/",
+    "author": "brktkrgll",
+    "license": "CC0 1.0 (Creative Commons 0) — verified on sound page",
+    "duration_s": 3.46,
+    "peak_dbfs": -3.0,
+    "notes": "Trimmed trailing silence after natural decay tail; gain-normalized +0.8dB to reach -3dBFS peak. Use on the hook's bold statement or big reveal."
+  },
+  {
+    "file": "hit-cinematic-01.mp3",
+    "wav": "hit-cinematic-01.wav",
+    "archetype": "cinematic hit",
+    "source_url": "https://freesound.org/people/AudioPapkin/sounds/510293/",
+    "author": "AudioPapkin",
+    "license": "CC0 1.0 (Creative Commons 0) — verified on sound page",
+    "duration_s": 3.55,
+    "peak_dbfs": -3.0,
+    "notes": "Originally titled 'Riser Hit sfx 009' — a short riser bundled into the impact; works as either a cinematic hit or a mini riser-into-hit. Normalized +39.5dB (quiet HQ preview).",
+    "source_note": "Original was very quiet (-42.5dB max); heavy gain applied — check for noise floor before using at high playback volume."
+  },
+  {
+    "file": "record-scratch-01.mp3",
+    "wav": "record-scratch-01.wav",
+    "archetype": "record scratch",
+    "source_url": "https://freesound.org/people/simkiott/sounds/43404/",
+    "author": "simkiott",
+    "license": "CC0 1.0 (Creative Commons 0) — verified on sound page",
+    "duration_s": 1.23,
+    "peak_dbfs": -3.0,
+    "notes": "Classic vinyl scratch, already short in source. Use on 'wait/no' objection beats or a comedic halt."
+  },
+  {
+    "file": "whoosh-fast-01.mp3",
+    "wav": "whoosh-fast-01.wav",
+    "archetype": "fast whoosh (variant 1)",
+    "source_url": "https://freesound.org/people/DJT4NN3R/sounds/449996/",
+    "author": "DJT4NN3R",
+    "license": "CC0 1.0 (Creative Commons 0) — verified on sound page",
+    "duration_s": 0.41,
+    "peak_dbfs": -3.0,
+    "notes": "Short, dry whoosh for fast cuts under 0.8s apart. Normalized +38.8dB from a quiet preview."
+  },
+  {
+    "file": "whoosh-fast-02.mp3",
+    "wav": "whoosh-fast-02.wav",
+    "archetype": "fast whoosh (variant 2)",
+    "source_url": "https://freesound.org/people/huw2k8/sounds/459941/",
+    "author": "huw2k8",
+    "license": "CC0 1.0 (Creative Commons 0) — verified on sound page",
+    "duration_s": 1.74,
+    "peak_dbfs": -3.0,
+    "notes": "Second whoosh variant to avoid repetition fatigue across cuts. Normalized +45dB from a quiet preview."
+  },
+  {
+    "file": "swoosh-swipe-01.mp3",
+    "wav": "swoosh-swipe-01.wav",
+    "archetype": "swoosh / swipe (list item)",
+    "source_url": "https://freesound.org/people/aidansamuel/sounds/540142/",
+    "author": "aidansamuel",
+    "license": "CC0 1.0 (Creative Commons 0) — verified on sound page",
+    "duration_s": 0.60,
+    "peak_dbfs": -3.0,
+    "notes": "Originally 'Golf Swing Swoosh' — a clean air-swipe transient, good for list items / agent cards sliding in. Normalized +40dB from a quiet preview."
+  },
+  {
+    "file": "pop-01.mp3",
+    "wav": "pop-01.wav",
+    "archetype": "pop / bubble pop (variant 1)",
+    "source_url": "https://freesound.org/people/YehawSnail/sounds/683587/",
+    "author": "YehawSnail",
+    "license": "CC0 1.0 (Creative Commons 0) — verified on sound page",
+    "duration_s": 0.15,
+    "peak_dbfs": -3.0,
+    "notes": "Tiny bubble-pop transient for text pop-ins / caption emphasis."
+  },
+  {
+    "file": "pop-02.mp3",
+    "wav": "pop-02.wav",
+    "archetype": "pop / bubble pop (variant 2)",
+    "source_url": "https://freesound.org/people/arttim/sounds/733264/",
+    "author": "arttim",
+    "license": "CC0 1.0 (Creative Commons 0) — verified on sound page",
+    "duration_s": 0.11,
+    "peak_dbfs": -3.0,
+    "notes": "Second, slightly brighter pop variant to alternate on successive text pop-ins."
+  },
+  {
+    "file": "ding-notification-01.mp3",
+    "wav": "ding-notification-01.wav",
+    "archetype": "notification ding",
+    "source_url": "https://freesound.org/people/craigscottuk/sounds/644963/",
+    "author": "craigscottuk",
+    "license": "CC0 1.0 (Creative Commons 0) — verified on sound page",
+    "duration_s": 1.22,
+    "peak_dbfs": -3.0,
+    "notes": "Originally 'Quiz Gameshow Correct Ping' — bright confirm/correct chime, reads as a notification/benefit ding. Normalized +16.1dB."
+  },
+  {
+    "file": "cash-register-01.mp3",
+    "wav": "cash-register-01.wav",
+    "archetype": "cash register / coin",
+    "source_url": "https://freesound.org/people/jcarrascovazquez/sounds/184044/",
+    "author": "jcarrascovazquez",
+    "license": "CC0 1.0 (Creative Commons 0) — verified on sound page",
+    "duration_s": 1.93,
+    "peak_dbfs": -3.0,
+    "notes": "Original title 'Caisse enregistreuse' (FR for cash register) — genuine ka-ching with drawer. Trimmed from a 7.4s source to the initial ring+drawer action. Normalized +43.6dB."
+  },
+  {
+    "file": "keyboard-typing-01.mp3",
+    "wav": "keyboard-typing-01.wav",
+    "archetype": "keyboard typing (short burst)",
+    "source_url": "https://freesound.org/people/bluedotfauna/sounds/31488/",
+    "author": "bluedotfauna",
+    "license": "CC0 1.0 (Creative Commons 0) — verified on sound page",
+    "duration_s": 1.52,
+    "peak_dbfs": -3.0,
+    "notes": "Trimmed from a 12s 'mad keyboard typing' recording down to the first continuous burst, for 'tech/AI agent working' beats."
+  },
+  {
+    "file": "mouse-click-01.mp3",
+    "wav": "mouse-click-01.wav",
+    "archetype": "mouse click",
+    "source_url": "https://freesound.org/people/abstraktgeneriert/sounds/213004/",
+    "author": "abstraktgeneriert",
+    "license": "CC0 1.0 (Creative Commons 0) — verified on sound page",
+    "duration_s": 0.08,
+    "peak_dbfs": -3.0,
+    "notes": "Isolated single click transient cut from the source's click region. Normalized +30.4dB."
+  },
+  {
+    "file": "riser-01.mp3",
+    "wav": "riser-01.wav",
+    "archetype": "riser (1-2s)",
+    "source_url": "https://freesound.org/people/fawkes027/sounds/176046/",
+    "author": "fawkes027",
+    "license": "CC0 1.0 (Creative Commons 0) — verified on sound page",
+    "duration_s": 2.08,
+    "peak_dbfs": -3.0,
+    "notes": "Chiptune-style riser/sweep-up. Place it ending ON the cut/reveal frame, not after it. Normalized +40.9dB."
+  },
+  {
+    "file": "reverse-swell-01.mp3",
+    "wav": "reverse-swell-01.wav",
+    "archetype": "reverse swell",
+    "source_url": "https://freesound.org/people/Fester993/sounds/564442/",
+    "author": "Fester993",
+    "license": "CC0 1.0 (Creative Commons 0) — verified on sound page",
+    "duration_s": 2.95,
+    "peak_dbfs": -3.0,
+    "notes": "Reversed guitar swell — softer anticipation cue than the chiptune riser, good before a calmer reveal. Normalized +62.2dB (quiet source; listen for hiss before use)."
+  },
+  {
+    "file": "camera-shutter-01.mp3",
+    "wav": "camera-shutter-01.wav",
+    "archetype": "camera shutter",
+    "source_url": "https://freesound.org/people/Clagnar/sounds/554269/",
+    "author": "Clagnar",
+    "license": "CC0 1.0 (Creative Commons 0) — verified on sound page",
+    "duration_s": 0.79,
+    "peak_dbfs": -3.0,
+    "notes": "Isolated a single shutter click from a 118s 'various speeds' reel. Normalized +49.9dB — quiet source, verify noise floor on final mix."
+  },
+  {
+    "file": "applause-01.mp3",
+    "wav": "applause-01.wav",
+    "archetype": "applause (short)",
+    "source_url": "https://freesound.org/people/kyles/sounds/450396/",
+    "author": "kyles (Marco Hertenstein field-recording upload)",
+    "license": "CC0 1.0 (Creative Commons 0) — verified on sound page",
+    "duration_s": 2.46,
+    "peak_dbfs": -3.0,
+    "notes": "Cut a ~2.5s chunk from inside a longer 'wrestling gym' applause/cheer recording (sustained, no fade-in needed). Normalized +15.9dB."
+  },
+  {
+    "file": "crowd-wow-01.mp3",
+    "wav": "crowd-wow-01.wav",
+    "archetype": "crowd \"wow\"/\"ooh\"",
+    "source_url": "https://freesound.org/people/kyles/sounds/453919/",
+    "author": "kyles",
+    "license": "CC0 1.0 (Creative Commons 0) — verified on sound page",
+    "duration_s": 2.96,
+    "peak_dbfs": -3.0,
+    "notes": "Cut from a long busy-restaurant ambience ('loud wow, Montreal') at the loudest detected segment (~99-102s mark, just before a brief dip). Crowd-texture reaction, not a clean isolated 'wow' — best under a payoff moment at low gain, not as a sharp accent. Normalized +16.8dB."
+  },
+  {
+    "file": "glitch-01.mp3",
+    "wav": "glitch-01.wav",
+    "archetype": "glitch",
+    "source_url": "https://freesound.org/people/greysound/sounds/90335/",
+    "author": "greysound",
+    "license": "CC0 1.0 (Creative Commons 0) — verified on sound page",
+    "duration_s": 1.66,
+    "peak_dbfs": -3.0,
+    "notes": "Digital glitch/stutter texture ('FreakenFurby_Glitch_37'), good for a tech/AI-agent beat or an error->fix beat. Normalized +11.9dB."
+  },
+  {
+    "file": "typewriter-ding-01.mp3",
+    "wav": "typewriter-ding-01.wav",
+    "archetype": "typewriter ding",
+    "source_url": "https://freesound.org/people/khwez/sounds/712225/",
+    "author": "khwez",
+    "license": "CC0 1.0 (Creative Commons 0) — verified on sound page",
+    "duration_s": 0.83,
+    "peak_dbfs": -3.0,
+    "notes": "'Typewriter ending bell' — genuine typewriter carriage-return bell, not just a generic click. Normalized +38.2dB."
+  }
+]

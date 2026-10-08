@@ -1,0 +1,470 @@
+/* ─────────────────────────────────────────────────────────────
+   agencia.css — el look del tablero. Sin plugins: viaja dentro
+   de la bóveda (.obsidian/snippets/) y se activa solo.
+   Se aplica a las notas con  cssclasses: tablero
+   ───────────────────────────────────────────────────────────── */
+
+body {
+  --agencia-acento: #E0673B;
+  --agencia-tinta: #2A1E17;
+  --agencia-propuesta: #4F7CFF;
+  --agencia-bloqueada: #E5484D;
+  --agencia-aprobada: #30A46C;
+  --agencia-publicada: #8E4EC6;
+  --agencia-revisar: #F5A524;
+  --agencia-radio: 14px;
+}
+
+/* 1 · Página a todo lo ancho, sin título repetido */
+.tablero {
+  --file-line-width: 100%;
+  --file-margins: 24px 40px;
+}
+.tablero .inline-title,
+.tablero .metadata-container,
+.markdown-source-view.tablero .metadata-container,
+.markdown-preview-view.tablero .metadata-container { display: none !important; }
+
+/* 2 · Portada: > [!portada] */
+.callout[data-callout="portada"] {
+  --callout-icon: lucide-sparkles;
+  --callout-color: 224, 103, 59;
+  border: 0;
+  border-radius: calc(var(--agencia-radio) + 6px);
+  padding: 28px 32px;
+  background:
+    radial-gradient(1200px 300px at 0% 0%, rgba(224, 103, 59, .35), transparent 60%),
+    radial-gradient(900px 300px at 100% 100%, rgba(142, 78, 198, .30), transparent 60%),
+    var(--background-secondary);
+}
+.callout[data-callout="portada"] .callout-title { font-size: 1.9em; font-weight: 800; letter-spacing: -.02em; }
+.callout[data-callout="portada"] .callout-content { font-size: 1.05em; color: var(--text-muted); }
+
+/* 3 · Tarjetas: > [!tarjetas] con una lista adentro → cuadrícula */
+.callout[data-callout="tarjetas"] {
+  --callout-icon: lucide-layout-grid;
+  --callout-color: 224, 103, 59;
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+.callout[data-callout="tarjetas"] .callout-title { font-size: 1.15em; padding: 0 0 8px; }
+.callout[data-callout="tarjetas"] > .callout-content > ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+}
+.callout[data-callout="tarjetas"] > .callout-content > ul > li {
+  list-style: none;
+  margin: 0;
+  padding: 16px 18px;
+  border-radius: var(--agencia-radio);
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+.callout[data-callout="tarjetas"] > .callout-content > ul > li:hover {
+  transform: translateY(-2px);
+  border-color: var(--agencia-acento);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .12);
+}
+.callout[data-callout="tarjetas"] > .callout-content > ul > li::marker { content: ""; }
+.callout[data-callout="tarjetas"] li > strong:first-child { display: block; font-size: 1.05em; margin-bottom: 4px; }
+.callout[data-callout="tarjetas"] .list-bullet { display: none; }
+
+/* 4 · Firma: > [!firma] — la regla de oro, siempre visible */
+.callout[data-callout="firma"] {
+  --callout-icon: lucide-pen-line;
+  --callout-color: 48, 164, 108;
+  border-radius: var(--agencia-radio);
+  border: 1px solid rgba(48, 164, 108, .45);
+  background: rgba(48, 164, 108, .10);
+  padding: 18px 22px;
+}
+.callout[data-callout="firma"] .callout-title { color: rgb(48, 164, 108); }
+
+/* 5 · Las vistas de Bases embebidas como paneles */
+.tablero .internal-embed.bases-embed,
+.tablero .bases-embed {
+  border-radius: var(--agencia-radio);
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-primary-alt);
+  padding: 6px 10px;
+}
+.bases-cards-item {
+  border-radius: var(--agencia-radio) !important;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.bases-cards-item:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0, 0, 0, .14); }
+
+/* 6 · Píldoras de estado (las pinta la fórmula html() de Tablero.base) */
+.pill {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: .78em;
+  font-weight: 700;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--text-faint);
+}
+.pill-propuesta { background: var(--agencia-propuesta); }
+.pill-bloqueada { background: var(--agencia-bloqueada); }
+.pill-aprobada { background: var(--agencia-aprobada); }
+.pill-publicada { background: var(--agencia-publicada); }
+.pill-rechazada { background: var(--text-faint); }
+.pill-propuesta-sin-revisar { background: var(--agencia-revisar); color: var(--agencia-tinta); }
+.firma-falta { color: var(--agencia-bloqueada); font-weight: 700; }
+
+/* 7 · Encabezados del tablero */
+.tablero h2 {
+  margin-top: 1.6em;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--agencia-acento);
+  display: inline-block;
+}
+
+/* 8 · Tarjetas de piezas (kanban Flujo y tarjetas de Inicio): compactas y del
+   color de su estado. La fórmula `cuando` deja un marcador .m-<estado> dentro
+   de cada tarjeta; :has() lo lee y pinta la tarjeta entera. */
+.bases-kanban-card .bases-kanban-card-label { display: none; }
+
+.bases-kanban-card:has(.m),
+.bases-cards-item:has(.m) {
+  --estado: var(--text-faint);
+  border: 1px solid color-mix(in srgb, var(--estado) 45%, transparent) !important;
+  border-left: 5px solid var(--estado) !important;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--estado) 26%, transparent), color-mix(in srgb, var(--estado) 6%, transparent) 70%),
+    var(--background-primary) !important;
+  border-radius: 12px !important;
+}
+.bases-kanban-card:has(.m-propuesta),  .bases-cards-item:has(.m-propuesta)  { --estado: var(--agencia-propuesta); }
+.bases-kanban-card:has(.m-bloqueada),  .bases-cards-item:has(.m-bloqueada)  { --estado: var(--agencia-bloqueada); }
+.bases-kanban-card:has(.m-aprobada),   .bases-cards-item:has(.m-aprobada)   { --estado: var(--agencia-aprobada); }
+.bases-kanban-card:has(.m-publicada),  .bases-cards-item:has(.m-publicada)  { --estado: var(--agencia-publicada); }
+
+.bases-kanban-card:has(.m):hover { box-shadow: 0 6px 20px color-mix(in srgb, var(--estado) 35%, transparent); }
+
+/* Encabezado de columna con el color de su estado (cuando tiene tarjetas) */
+.bases-kanban-column:has(.m-propuesta) { --estado: var(--agencia-propuesta); }
+.bases-kanban-column:has(.m-bloqueada) { --estado: var(--agencia-bloqueada); }
+.bases-kanban-column:has(.m-aprobada)  { --estado: var(--agencia-aprobada); }
+.bases-kanban-column:has(.m-publicada) { --estado: var(--agencia-publicada); }
+.bases-kanban-column:has(.m) .bases-kanban-column-header {
+  background: color-mix(in srgb, var(--estado) 22%, transparent);
+  border-bottom: 2px solid var(--estado);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  font-size: .85em;
+}
+.bases-kanban-column:has(.m) .bases-kanban-column-count {
+  background: var(--estado);
+  color: #fff;
+  border-radius: 999px;
+  padding: 0 8px;
+  font-weight: 700;
+}
+
+/* Piezas sueltas dentro de la tarjeta */
+.m { display: none; }
+.chip {
+  display: inline-block;
+  padding: 1px 8px;
+  margin-right: 4px;
+  border-radius: 999px;
+  font-size: .8em;
+  font-weight: 700;
+  background: var(--estado, var(--agencia-acento));
+  color: #fff;
+}
+.nota-bloq { color: var(--agencia-bloqueada); font-weight: 600; }
+.nota-ok { color: var(--agencia-aprobada); font-weight: 600; }
+.nota-pend { color: var(--text-muted); }
+
+/* Aire entre el encabezado de la columna y la primera tarjeta */
+.bases-kanban-column-content { padding-top: 12px !important; }
+
+/* Kanban más alto. Obsidian lo fija en 500px dentro de una nota
+   (--bases-embed-height); en Inicio sube a 720px y en la página Flujo
+   (cssclasses: flujo) llena la pantalla. */
+.tablero .bases-view[data-view-type="kanban"] { --bases-embed-height: 720px; }
+.flujo .bases-view[data-view-type="kanban"] { --bases-embed-height: calc(100vh - 200px); }
+.tablero .bases-view[data-view-type="kanban"] { height: var(--bases-embed-height) !important; }
+.tablero .bases-view[data-view-type="kanban"] .bases-kanban-container {
+  height: calc(var(--bases-embed-height) - 24px) !important;
+}
+
+/* Calendario (plugin Calendar Bases): eventos con el color de su estado */
+.tablero .bases-view[data-view-type="calendar"] { --bases-embed-height: 760px; }
+.fc-event:has(.m) {
+  --estado: var(--text-faint);
+  background: color-mix(in srgb, var(--estado) 30%, var(--background-primary)) !important;
+  border: 0 !important;
+  border-left: 4px solid var(--estado) !important;
+  border-radius: 8px !important;
+  padding: 2px 4px;
+}
+.fc-event:has(.m-propuesta) { --estado: var(--agencia-propuesta); }
+.fc-event:has(.m-bloqueada) { --estado: var(--agencia-bloqueada); }
+.fc-event:has(.m-aprobada)  { --estado: var(--agencia-aprobada); }
+.fc-event:has(.m-publicada) { --estado: var(--agencia-publicada); }
+.fc .fc-day-today { background: color-mix(in srgb, var(--agencia-acento) 12%, transparent) !important; }
+.flujo .bases-view[data-view-type="calendar"] { --bases-embed-height: calc(100vh - 200px); }
+
+/* Equipo: modelo de cada agente */
+.pill-modelo-opus { background: var(--agencia-acento); }
+.pill-modelo-sonnet { background: var(--agencia-propuesta); }
+.pill-modelo-haiku { background: var(--agencia-aprobada); }
+
+/* Presentación (plugin core Slides, reveal.js): los colores de la agencia */
+.slides-container, .reveal {
+  --r-background-color: #17110D;
+  --r-main-color: #F3EBE3;
+  --r-heading-color: #FFFFFF;
+  --r-link-color: var(--agencia-acento);
+  --r-main-font-size: 34px;
+}
+.reveal-viewport,
+.reveal {
+  background:
+    radial-gradient(1200px 500px at 0% 0%, rgba(224, 103, 59, .28), transparent 60%),
+    radial-gradient(900px 500px at 100% 100%, rgba(142, 78, 198, .25), transparent 60%),
+    #17110D;
+}
+.reveal h1,
+.reveal h2 { letter-spacing: -.02em; font-weight: 800; text-transform: none; }
+.reveal h2 { color: var(--agencia-acento); }
+.reveal strong { color: #FFB38F; }
+.reveal blockquote {
+  border-left: 6px solid var(--agencia-acento);
+  background: rgba(255, 255, 255, .05);
+  border-radius: 12px;
+  padding: .6em 1em;
+  box-shadow: none;
+  width: 85%;
+}
+.reveal table { font-size: .8em; }
+.reveal code { color: #FFB38F; }
+
+
+/* 9 · Íconos en el explorador y en Marcadores (Lucide, ISC, embebidos: sin internet) */
+.tree-item-inner::before { content: none; }
+[data-path="Inicio.md"] > .tree-item-inner::before {
+  content: ""; display: inline-block; width: 15px; height: 15px; margin-right: 7px; vertical-align: -2px;
+  background-color: var(--agencia-acento);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8%22 /%3E %3Cpath d=%22M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z%22 /%3E %3C/svg%3E") no-repeat center / contain; mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8%22 /%3E %3Cpath d=%22M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z%22 /%3E %3C/svg%3E") no-repeat center / contain;
+}
+[data-path="Flujo.md"] > .tree-item-inner::before {
+  content: ""; display: inline-block; width: 15px; height: 15px; margin-right: 7px; vertical-align: -2px;
+  background-color: var(--agencia-acento);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Crect width=%2218%22 height=%2218%22 x=%223%22 y=%223%22 rx=%222%22 /%3E %3Cpath d=%22M8 7v7%22 /%3E %3Cpath d=%22M12 7v4%22 /%3E %3Cpath d=%22M16 7v9%22 /%3E %3C/svg%3E") no-repeat center / contain; mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Crect width=%2218%22 height=%2218%22 x=%223%22 y=%223%22 rx=%222%22 /%3E %3Cpath d=%22M8 7v7%22 /%3E %3Cpath d=%22M12 7v4%22 /%3E %3Cpath d=%22M16 7v9%22 /%3E %3C/svg%3E") no-repeat center / contain;
+}
+[data-path="Calendario.md"] > .tree-item-inner::before {
+  content: ""; display: inline-block; width: 15px; height: 15px; margin-right: 7px; vertical-align: -2px;
+  background-color: var(--agencia-acento);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M8 2v4%22 /%3E %3Cpath d=%22M16 2v4%22 /%3E %3Crect width=%2218%22 height=%2218%22 x=%223%22 y=%224%22 rx=%222%22 /%3E %3Cpath d=%22M3 10h18%22 /%3E %3Cpath d=%22M8 14h.01%22 /%3E %3Cpath d=%22M12 14h.01%22 /%3E %3Cpath d=%22M16 14h.01%22 /%3E %3Cpath d=%22M8 18h.01%22 /%3E %3Cpath d=%22M12 18h.01%22 /%3E %3Cpath d=%22M16 18h.01%22 /%3E %3C/svg%3E") no-repeat center / contain; mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M8 2v4%22 /%3E %3Cpath d=%22M16 2v4%22 /%3E %3Crect width=%2218%22 height=%2218%22 x=%223%22 y=%224%22 rx=%222%22 /%3E %3Cpath d=%22M3 10h18%22 /%3E %3Cpath d=%22M8 14h.01%22 /%3E %3Cpath d=%22M12 14h.01%22 /%3E %3Cpath d=%22M16 14h.01%22 /%3E %3Cpath d=%22M8 18h.01%22 /%3E %3Cpath d=%22M12 18h.01%22 /%3E %3Cpath d=%22M16 18h.01%22 /%3E %3C/svg%3E") no-repeat center / contain;
+}
+[data-path="Equipo.md"] > .tree-item-inner::before {
+  content: ""; display: inline-block; width: 15px; height: 15px; margin-right: 7px; vertical-align: -2px;
+  background-color: var(--agencia-acento);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M12 8V4H8%22 /%3E %3Crect width=%2216%22 height=%2212%22 x=%224%22 y=%228%22 rx=%222%22 /%3E %3Cpath d=%22M2 14h2%22 /%3E %3Cpath d=%22M20 14h2%22 /%3E %3Cpath d=%22M15 13v2%22 /%3E %3Cpath d=%22M9 13v2%22 /%3E %3C/svg%3E") no-repeat center / contain; mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M12 8V4H8%22 /%3E %3Crect width=%2216%22 height=%2212%22 x=%224%22 y=%228%22 rx=%222%22 /%3E %3Cpath d=%22M2 14h2%22 /%3E %3Cpath d=%22M20 14h2%22 /%3E %3Cpath d=%22M15 13v2%22 /%3E %3Cpath d=%22M9 13v2%22 /%3E %3C/svg%3E") no-repeat center / contain;
+}
+[data-path="Presentación.md"] > .tree-item-inner::before {
+  content: ""; display: inline-block; width: 15px; height: 15px; margin-right: 7px; vertical-align: -2px;
+  background-color: var(--agencia-acento);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M2 3h20%22 /%3E %3Cpath d=%22M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3%22 /%3E %3Cpath d=%22m7 21 5-5 5 5%22 /%3E %3C/svg%3E") no-repeat center / contain; mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M2 3h20%22 /%3E %3Cpath d=%22M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3%22 /%3E %3Cpath d=%22m7 21 5-5 5 5%22 /%3E %3C/svg%3E") no-repeat center / contain;
+}
+[data-path="Conectores para después.md"] > .tree-item-inner::before {
+  content: ""; display: inline-block; width: 15px; height: 15px; margin-right: 7px; vertical-align: -2px;
+  background-color: var(--agencia-acento);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M12 22v-5%22 /%3E %3Cpath d=%22M9 8V2%22 /%3E %3Cpath d=%22M15 8V2%22 /%3E %3Cpath d=%22M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z%22 /%3E %3C/svg%3E") no-repeat center / contain; mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M12 22v-5%22 /%3E %3Cpath d=%22M9 8V2%22 /%3E %3Cpath d=%22M15 8V2%22 /%3E %3Cpath d=%22M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z%22 /%3E %3C/svg%3E") no-repeat center / contain;
+}
+[data-path="CLAUDE.md"] > .tree-item-inner::before {
+  content: ""; display: inline-block; width: 15px; height: 15px; margin-right: 7px; vertical-align: -2px;
+  background-color: var(--agencia-acento);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z%22 /%3E %3Cpath d=%22M14 2v4a2 2 0 0 0 2 2h4%22 /%3E %3Cpath d=%22M10 9H8%22 /%3E %3Cpath d=%22M16 13H8%22 /%3E %3Cpath d=%22M16 17H8%22 /%3E %3C/svg%3E") no-repeat center / contain; mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z%22 /%3E %3Cpath d=%22M14 2v4a2 2 0 0 0 2 2h4%22 /%3E %3Cpath d=%22M10 9H8%22 /%3E %3Cpath d=%22M16 13H8%22 /%3E %3Cpath d=%22M16 17H8%22 /%3E %3C/svg%3E") no-repeat center / contain;
+}
+[data-path="README.md"] > .tree-item-inner::before {
+  content: ""; display: inline-block; width: 15px; height: 15px; margin-right: 7px; vertical-align: -2px;
+  background-color: var(--agencia-acento);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M12 7v14%22 /%3E %3Cpath d=%22M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z%22 /%3E %3C/svg%3E") no-repeat center / contain; mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M12 7v14%22 /%3E %3Cpath d=%22M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z%22 /%3E %3C/svg%3E") no-repeat center / contain;
+}
+[data-path="datos/Tablero.base"] > .tree-item-inner::before {
+  content: ""; display: inline-block; width: 15px; height: 15px; margin-right: 7px; vertical-align: -2px;
+  background-color: var(--agencia-acento);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18%22 /%3E %3C/svg%3E") no-repeat center / contain; mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18%22 /%3E %3C/svg%3E") no-repeat center / contain;
+}
+[data-path="datos/Equipo.base"] > .tree-item-inner::before {
+  content: ""; display: inline-block; width: 15px; height: 15px; margin-right: 7px; vertical-align: -2px;
+  background-color: var(--agencia-acento);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2%22 /%3E %3Ccircle cx=%229%22 cy=%227%22 r=%224%22 /%3E %3Cpath d=%22M22 21v-2a4 4 0 0 0-3-3.87%22 /%3E %3Cpath d=%22M16 3.13a4 4 0 0 1 0 7.75%22 /%3E %3C/svg%3E") no-repeat center / contain; mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2%22 /%3E %3Ccircle cx=%229%22 cy=%227%22 r=%224%22 /%3E %3Cpath d=%22M22 21v-2a4 4 0 0 0-3-3.87%22 /%3E %3Cpath d=%22M16 3.13a4 4 0 0 1 0 7.75%22 /%3E %3C/svg%3E") no-repeat center / contain;
+}
+[data-path="clientes"] > .tree-item-inner::before {
+  content: ""; display: inline-block; width: 15px; height: 15px; margin-right: 7px; vertical-align: -2px;
+  background-color: var(--agencia-acento);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z%22 /%3E %3C/svg%3E") no-repeat center / contain; mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z%22 /%3E %3C/svg%3E") no-repeat center / contain;
+}
+[data-path="clientes/algolab"] > .tree-item-inner::before {
+  content: ""; display: inline-block; width: 15px; height: 15px; margin-right: 7px; vertical-align: -2px;
+  background-color: var(--agencia-acento);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z%22 /%3E %3C/svg%3E") no-repeat center / contain; mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z%22 /%3E %3C/svg%3E") no-repeat center / contain;
+}
+
+/* 10 · Íconos de página (Lucide nativos de Obsidian, vía callouts) */
+.callout[data-callout="portada"][data-callout-metadata="inicio"]     { --callout-icon: lucide-house; }
+.callout[data-callout="portada"][data-callout-metadata="flujo"]      { --callout-icon: lucide-square-kanban; }
+.callout[data-callout="portada"][data-callout-metadata="calendario"] { --callout-icon: lucide-calendar-days; }
+.callout[data-callout="portada"][data-callout-metadata="equipo"]     { --callout-icon: lucide-bot; }
+.flujo .callout[data-callout="portada"] { padding: 16px 24px; margin-bottom: 12px; }
+.flujo .callout[data-callout="portada"] .callout-title { font-size: 1.4em; }
+
+/* Cuadrícula de tarjetas con ícono: > [!grid] con callouts adentro */
+.callout[data-callout="grid"] { background: transparent; border: 0; padding: 0; }
+.callout[data-callout="grid"] > .callout-title { display: none; }
+.callout[data-callout="grid"] > .callout-content {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px;
+}
+.callout[data-callout="grid"] > .callout-content > p { display: none; }
+.callout[data-callout="grid"] .callout {
+  margin: 0; padding: 16px 18px; border-radius: var(--agencia-radio);
+  background: var(--background-secondary); border: 1px solid var(--background-modifier-border);
+  transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+.callout[data-callout="grid"] .callout:hover {
+  transform: translateY(-2px); border-color: rgb(var(--callout-color));
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .12);
+}
+.callout[data-callout="grid"] .callout .callout-title { font-size: 1.05em; }
+.callout[data-callout="grid"] .callout .callout-content { color: var(--text-muted); font-size: .95em; }
+
+.callout[data-callout="agente"]  { --callout-color: 224, 103, 59; }
+.callout[data-callout="agente"][data-callout-metadata="cmo"]          { --callout-icon: lucide-crown; }
+.callout[data-callout="agente"][data-callout-metadata="investigador"] { --callout-icon: lucide-search; }
+.callout[data-callout="agente"][data-callout-metadata="creativo"]     { --callout-icon: lucide-palette; }
+.callout[data-callout="agente"][data-callout-metadata="analista"]     { --callout-icon: lucide-chart-column; }
+.callout[data-callout="agente"][data-callout-metadata="motion-editor"] { --callout-icon: lucide-clapperboard; }
+
+.callout[data-callout="estado"] { --callout-icon: lucide-circle-dot; }
+.callout[data-callout="estado"][data-callout-metadata="propuesta"] { --callout-color: 79, 124, 255;  --callout-icon: lucide-eye; }
+.callout[data-callout="estado"][data-callout-metadata="bloqueada"] { --callout-color: 229, 72, 77;   --callout-icon: lucide-circle-help; }
+.callout[data-callout="estado"][data-callout-metadata="aprobada"]  { --callout-color: 48, 164, 108;  --callout-icon: lucide-pen-line; }
+.callout[data-callout="estado"][data-callout-metadata="publicada"] { --callout-color: 142, 78, 198;  --callout-icon: lucide-send; }
+
+.callout[data-callout="atajo"] { --callout-color: 224, 103, 59; }
+.callout[data-callout="atajo"][data-callout-metadata="flujo"]        { --callout-icon: lucide-square-kanban; }
+.callout[data-callout="atajo"][data-callout-metadata="calendario"]   { --callout-icon: lucide-calendar-days; }
+.callout[data-callout="atajo"][data-callout-metadata="equipo"]       { --callout-icon: lucide-bot; }
+.callout[data-callout="atajo"][data-callout-metadata="presentacion"] { --callout-icon: lucide-presentation; }
+.callout[data-callout="atajo"][data-callout-metadata="cliente"]      { --callout-icon: lucide-shield-check; }
+.callout[data-callout="atajo"][data-callout-metadata="conectores"]   { --callout-icon: lucide-plug; }
+.callout[data-callout="grid"] .callout .callout-title,
+.callout[data-callout="grid"] .callout .callout-icon { color: rgb(var(--callout-color)); }
+
+[data-path=".claude"] > .tree-item-inner::before {
+  content: ""; display: inline-block; width: 15px; height: 15px; margin-right: 7px; vertical-align: -2px;
+  background-color: var(--agencia-acento);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z%22 /%3E %3C/svg%3E") no-repeat center / contain; mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z%22 /%3E %3C/svg%3E") no-repeat center / contain;
+}
+[data-path="datos"] > .tree-item-inner::before {
+  content: ""; display: inline-block; width: 15px; height: 15px; margin-right: 7px; vertical-align: -2px;
+  background-color: var(--agencia-acento);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z%22 /%3E %3C/svg%3E") no-repeat center / contain; mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z%22 /%3E %3C/svg%3E") no-repeat center / contain;
+}
+[data-path="plantillas"] > .tree-item-inner::before {
+  content: ""; display: inline-block; width: 15px; height: 15px; margin-right: 7px; vertical-align: -2px;
+  background-color: var(--agencia-acento);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z%22 /%3E %3C/svg%3E") no-repeat center / contain; mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z%22 /%3E %3C/svg%3E") no-repeat center / contain;
+}
+
+/* Presentación: fundido en vez de deslizar (Obsidian fija transition:"slide" en reveal.js) */
+.reveal .slides > section,
+.reveal .slides > section > section {
+  transform: none !important;
+  transition: opacity .5s ease, visibility .5s ease !important;
+}
+.reveal .slides > section.past,
+.reveal .slides > section.future,
+.reveal .slides > section > section.past,
+.reveal .slides > section > section.future { opacity: 0 !important; }
+.reveal .slides > section.present,
+.reveal .slides > section > section.present { opacity: 1 !important; }
+
+
+/* Diapositiva: Evolución de una transformación IA */
+.reveal .evolucion { text-align: left; width: 100%; }
+.reveal .evolucion h2 { font-size: 1.6em; margin-bottom: .15em; }
+.reveal .evolucion .sub { font-size: .62em; color: rgba(243, 235, 227, .75); margin: 0 0 1.1em; }
+.reveal .evolucion .etapas { display: grid; grid-template-columns: repeat(3, 1fr); }
+.reveal .evolucion .etapa { padding: 0 1.1em; border-left: 3px solid rgba(243, 235, 227, .35); }
+.reveal .evolucion .etapa:first-child { border-left: 0; padding-left: 0; }
+.reveal .evolucion .n { font-size: .7em; color: var(--agencia-acento); font-weight: 800; text-align: center; }
+.reveal .evolucion .t { font-size: .72em; font-weight: 700; text-align: center; line-height: 1.25; min-height: 2.6em; }
+.reveal .evolucion .iconos {
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+  gap: .25em; font-size: 1.35em; margin: .5em auto .6em; min-height: 2.6em; max-width: 6.2em;
+}
+.reveal .evolucion .iconos.tres { font-size: 1.05em; max-width: 6em; }
+.reveal .evolucion .ico { display: inline-flex; color: #F3EBE3; }
+.reveal .evolucion .ico svg { width: 1em; height: 1em; stroke-width: 1.6; }
+.reveal .evolucion .ico.agente { border: 2px solid #F3EBE3; border-radius: 50%; padding: .14em; }
+.reveal .evolucion .ico.agente svg { width: .72em; height: .72em; color: var(--agencia-acento); }
+.reveal .evolucion .ico.humano svg { width: 1.08em; height: 1.08em; }
+.reveal .evolucion .ico.mas svg { width: .55em; height: .55em; opacity: .7; }
+.reveal .evolucion .etapa p { font-size: .5em; line-height: 1.4; color: rgba(243, 235, 227, .82); margin: 0; }
+.reveal .evolucion .ico.agente svg { width: .74em; height: .74em; }
+.reveal .evolucion .ico.agente.c1 { border-color: #E0673B; } .reveal .evolucion .ico.agente.c1 svg { color: #FF9A6E; }
+.reveal .evolucion .ico.agente.c2 { border-color: #A77BE0; } .reveal .evolucion .ico.agente.c2 svg { color: #C9A6F5; }
+.reveal .evolucion .ico.agente.c3 { border-color: #6B8EFF; } .reveal .evolucion .ico.agente.c3 svg { color: #9DB4FF; }
+.reveal h2.blanco { color: #FFFFFF; }
+.reveal blockquote + blockquote { margin-top: .5em; }
+
+[data-path="ejercicios"] > .tree-item-inner::before {
+  content: ""; display: inline-block; width: 15px; height: 15px; margin-right: 7px; vertical-align: -2px;
+  background-color: var(--agencia-acento);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z%22 /%3E %3C/svg%3E") no-repeat center / contain; mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z%22 /%3E %3C/svg%3E") no-repeat center / contain;
+}
+
+/* 11 · Títulos de colores con ícono (sólo en notas; no en la presentación) */
+.workspace-leaf-content .markdown-rendered h1, .workspace-leaf-content .markdown-source-view .HyperMD-header-1, .workspace-leaf-content .markdown-source-view .HyperMD-header-1 .cm-header { color: #E0673B; }
+.workspace-leaf-content .markdown-rendered h1::before, .workspace-leaf-content .markdown-source-view .HyperMD-header-1::before {
+  content: ""; display: inline-block; width: .8em; height: .8em; margin-right: .35em; vertical-align: -.05em;
+  background-color: #E0673B;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z%22 /%3E %3Cpath d=%22M20 3v4%22 /%3E %3Cpath d=%22M22 5h-4%22 /%3E %3Cpath d=%22M4 17v2%22 /%3E %3Cpath d=%22M5 18H3%22 /%3E %3C/svg%3E") no-repeat center / contain; mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z%22 /%3E %3Cpath d=%22M20 3v4%22 /%3E %3Cpath d=%22M22 5h-4%22 /%3E %3Cpath d=%22M4 17v2%22 /%3E %3Cpath d=%22M5 18H3%22 /%3E %3C/svg%3E") no-repeat center / contain;
+}
+.workspace-leaf-content .markdown-rendered h2, .workspace-leaf-content .markdown-source-view .HyperMD-header-2, .workspace-leaf-content .markdown-source-view .HyperMD-header-2 .cm-header { color: #A77BE0; }
+.workspace-leaf-content .markdown-rendered h2::before, .workspace-leaf-content .markdown-source-view .HyperMD-header-2::before {
+  content: ""; display: inline-block; width: .8em; height: .8em; margin-right: .35em; vertical-align: -.05em;
+  background-color: #A77BE0;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z%22 /%3E %3C/svg%3E") no-repeat center / contain; mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z%22 /%3E %3C/svg%3E") no-repeat center / contain;
+}
+.workspace-leaf-content .markdown-rendered h3, .workspace-leaf-content .markdown-source-view .HyperMD-header-3, .workspace-leaf-content .markdown-source-view .HyperMD-header-3 .cm-header { color: #6B8EFF; }
+.workspace-leaf-content .markdown-rendered h3::before, .workspace-leaf-content .markdown-source-view .HyperMD-header-3::before {
+  content: ""; display: inline-block; width: .8em; height: .8em; margin-right: .35em; vertical-align: -.05em;
+  background-color: #6B8EFF;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22m9 18 6-6-6-6%22 /%3E %3C/svg%3E") no-repeat center / contain; mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22m9 18 6-6-6-6%22 /%3E %3C/svg%3E") no-repeat center / contain;
+}
+.workspace-leaf-content .markdown-rendered h4, .workspace-leaf-content .markdown-source-view .HyperMD-header-4, .workspace-leaf-content .markdown-source-view .HyperMD-header-4 .cm-header { color: #30A46C; }
+.workspace-leaf-content .markdown-rendered h4::before, .workspace-leaf-content .markdown-source-view .HyperMD-header-4::before {
+  content: ""; display: inline-block; width: .8em; height: .8em; margin-right: .35em; vertical-align: -.05em;
+  background-color: #30A46C;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Ccircle cx=%2212.1%22 cy=%2212.1%22 r=%221%22 /%3E %3C/svg%3E") no-repeat center / contain; mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Ccircle cx=%2212.1%22 cy=%2212.1%22 r=%221%22 /%3E %3C/svg%3E") no-repeat center / contain;
+}
+.workspace-leaf-content .markdown-source-view .HyperMD-header .cm-formatting-header { color: var(--text-faint); }
+
+[data-path="documentos"] > .tree-item-inner::before {
+  content: ""; display: inline-block; width: 15px; height: 15px; margin-right: 7px; vertical-align: -2px;
+  background-color: var(--agencia-acento);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z%22 /%3E %3C/svg%3E") no-repeat center / contain; mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpath d=%22M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z%22 /%3E %3C/svg%3E") no-repeat center / contain;
+}
+
+.callout[data-callout="portada"][data-callout-metadata="estrategia"] { --callout-icon: lucide-trending-up; }
+.callout[data-callout="atajo"][data-callout-metadata="estrategia"] { --callout-icon: lucide-trending-up; }
+[data-path="Estrategia de contenido.md"] > .tree-item-inner::before {
+  content: ""; display: inline-block; width: 15px; height: 15px; margin-right: 7px; vertical-align: -2px;
+  background-color: var(--agencia-acento);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpolyline points=%2222 7 13.5 15.5 8.5 10.5 2 17%22 /%3E %3Cpolyline points=%2216 7 22 7 22 13%22 /%3E %3C/svg%3E") no-repeat center / contain; mask: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 %3E %3Cpolyline points=%2222 7 13.5 15.5 8.5 10.5 2 17%22 /%3E %3Cpolyline points=%2216 7 22 7 22 13%22 /%3E %3C/svg%3E") no-repeat center / contain;
+}

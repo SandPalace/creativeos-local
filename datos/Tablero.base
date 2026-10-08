@@ -1,0 +1,139 @@
+filters:
+  or:
+    - 'tipo == "pieza"'
+    - 'tipo == "creativo"'
+
+formulas:
+  estado_pill: |-
+    html("<span class='pill pill-" + estado + "'>" + estado + "</span>")
+  cuando: |-
+    html("<span class='m m-" + estado + "'></span><span class='chip'>" + canal + "</span> " + dia + " " + fecha.format("D MMM"))
+  canal_chip: |-
+    html("<span class='m m-" + estado + "'></span><span class='chip'>" + canal + "</span>")
+  nota: |-
+    if(estado == "bloqueada", html("<span class='nota-bloq'>❓ " + pregunta + "</span>"), if(estado == "aprobada" || estado == "publicada", if(aprobado_por, html("<span class='nota-ok'>✍ " + aprobado_por + "</span>"), html("<span class='firma-falta'>⚠ falta firma</span>")), html("<span class='nota-pend'>👀 por revisar</span>")))
+  firma: |-
+    if(aprobado_por, aprobado_por, if(estado == "aprobada", html("<span class='firma-falta'>⚠ falta firma</span>"), ""))
+
+properties:
+  note.estado:
+    displayName: Estado
+  formula.estado_pill:
+    displayName: Estado
+  formula.firma:
+    displayName: Aprobó
+  formula.cuando:
+    displayName: Cuándo y dónde
+  note.fecha:
+    displayName: Fecha
+  note.dia:
+    displayName: Día
+  note.aprobado_por:
+    displayName: Aprobó
+
+views:
+  - type: cards
+    name: Piezas
+    filters:
+      and:
+        - 'tipo == "pieza"'
+    groupBy:
+      property: note.estado
+      direction: DESC
+    groupOrder:
+      - bloqueada
+      - propuesta
+      - aprobada
+      - publicada
+    cardSize: 240
+    order:
+      - file.name
+      - formula.cuando
+      - formato
+      - formula.nota
+
+  # Requiere Obsidian 1.14+. En versiones anteriores esta vista dice "unknown view type".
+  - type: kanban
+    name: Flujo
+    filters:
+      and:
+        - 'tipo == "pieza"'
+    groupBy:
+      property: note.estado
+      direction: ASC
+    groupOrder:
+      - bloqueada
+      - propuesta
+      - aprobada
+      - publicada
+    order:
+      - file.name
+      - formula.cuando
+      - formato
+      - formula.nota
+
+  - type: cards
+    name: Creativos
+    filters:
+      and:
+        - 'tipo == "creativo"'
+    image: note.imagen
+    imageAspectRatio: 1.25
+    cardSize: 220
+    order:
+      - file.name
+      - pieza
+      - modelo
+      - formula.estado_pill
+
+  # Requiere el plugin Calendar Bases (viene en .obsidian/plugins/, MIT, edrickleong).
+  # Arrastrar un evento a otro día cambia la propiedad fecha.
+  - type: calendar
+    name: Calendario
+    filters:
+      and:
+        - 'tipo == "pieza"'
+    startDate: note.fecha
+    weekStartDay: monday
+    order:
+      - file.name
+      - formula.canal_chip
+
+  - type: table
+    name: Lista
+    filters:
+      and:
+        - 'tipo == "pieza"'
+    order:
+      - file.name
+      - fecha
+      - dia
+      - canal
+      - formato
+      - objetivo
+      - formula.estado_pill
+      - formula.firma
+
+  - type: table
+    name: Por aprobar
+    filters:
+      and:
+        - 'tipo == "pieza"'
+        - 'estado == "propuesta"'
+    order:
+      - file.name
+      - cliente
+      - fecha
+      - canal
+      - objetivo
+
+  - type: table
+    name: Bloqueadas
+    filters:
+      and:
+        - 'estado == "bloqueada"'
+    order:
+      - file.name
+      - cliente
+      - fecha
+      - pregunta

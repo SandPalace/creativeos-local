@@ -1,7 +1,7 @@
 # Conectores para después
 
-Hoy todo es local y gratis: Obsidian + archivos + Claude Code. No necesitas ningún conector para
-que tus agentes lean y escriban tu bóveda: **son archivos, Claude Code ya los ve.**
+Hoy todo es local y gratis: Obsidian + archivos + Claude Desktop. No necesitas ningún conector para
+que tus agentes lean y escriban tu bóveda: **son archivos, Claude ya los ve.**
 
 Cuando la agencia crezca, éstos son los conectores que suman, en el orden en que suelen hacer falta.
 Revisa el precio y los permisos de cada uno antes de conectarlo; varios requieren plan de pago o
@@ -9,7 +9,7 @@ una cuenta de negocio.
 
 | Cuando necesites… | Conector | Tipo | Ojo con |
 |---|---|---|---|
-| Ver la web como un humano (perfiles, páginas que bloquean búsqueda) | **Playwright** | MCP local, gratis | Ya viene en `.mcp.example.json` |
+| Ver la web como un humano (perfiles, páginas que bloquean búsqueda) | **Navegador de Claude Desktop** o **Playwright** | Integrado / MCP local | Desktop ya trae navegador. Playwright (`.mcp.example.json`) necesita Node |
 | Leer métricas reales de tus anuncios | **Meta Ads MCP oficial** (`mcp.facebook.com/ads`) | MCP remoto, OAuth | Empieza **sólo lectura**. Las herramientas que crean, activan o editan van en `ask` |
 | Compartir documentos con el cliente | **Google Drive / Docs** | Conector de claude.ai | El cliente ve lo que subas: nada sin aprobar |
 | Mandar reportes por correo | **Gmail** | Conector de claude.ai | Enviar es publicar: que el agente deje **borrador**, tú envías |
@@ -36,7 +36,7 @@ alguien frente a la pantalla — en una corrida automática sin humano, se bloqu
 ## Lo que usan los sistemas que se ven en TikTok
 
 Los "equipos de marketing agénticos" que se venden en redes (oct-2026) suelen montar, encima de
-Claude Code: Semrush y SparkToro (investigación), Surfer (SEO), Canva y Midjourney (diseño),
+Claude: Semrush y SparkToro (investigación), Surfer (SEO), Canva y Midjourney (diseño),
 ElevenLabs (voz), Metricool (programar publicaciones), ManyChat (responder DMs), HubSpot (CRM),
 Klaviyo (correo), GA4 y Looker Studio (analítica). Casi todos son de pago. La arquitectura es la
 misma que la de este kit — un orquestador, archivos de contexto compartidos y un humano que

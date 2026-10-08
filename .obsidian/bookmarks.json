@@ -1,0 +1,46 @@
+{
+  "items": [
+    {
+      "type": "file",
+      "ctime": 1791435903649,
+      "path": "Inicio.md",
+      "title": "Inicio"
+    },
+    {
+      "type": "file",
+      "ctime": 1791435903650,
+      "path": "Flujo.md",
+      "title": "Flujo"
+    },
+    {
+      "type": "file",
+      "ctime": 1791435903651,
+      "path": "Calendario.md",
+      "title": "Calendario"
+    },
+    {
+      "type": "file",
+      "ctime": 1791435903699,
+      "path": "Estrategia de contenido.md",
+      "title": "Estrategia"
+    },
+    {
+      "type": "file",
+      "ctime": 1791435903652,
+      "path": "Equipo.md",
+      "title": "Equipo"
+    },
+    {
+      "type": "file",
+      "ctime": 1791435903653,
+      "path": "Presentación.md",
+      "title": "Presentación"
+    },
+    {
+      "type": "file",
+      "ctime": 1791435903654,
+      "path": "Conectores para después.md",
+      "title": "Conectores"
+    }
+  ]
+}

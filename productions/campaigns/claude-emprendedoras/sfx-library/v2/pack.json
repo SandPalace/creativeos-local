@@ -1,0 +1,173 @@
+[
+ {
+  "file": "v2/boom-deep-01.wav",
+  "from": "raw/boom-deep-01.mp3",
+  "start_s": 0.3,
+  "duration_s": 3.4,
+  "gain_db": -1.9,
+  "hit_ms": 120,
+  "audible_ms": 3080
+ },
+ {
+  "file": "v2/hit-cinematic-01.wav",
+  "from": "raw/hit-cinematic-01.mp3",
+  "start_s": 0.0,
+  "duration_s": 4.1,
+  "gain_db": 0.3,
+  "hit_ms": null,
+  "audible_ms": 3500
+ },
+ {
+  "file": "v2/record-scratch-01.wav",
+  "from": "raw/record-scratch-01.mp3",
+  "start_s": 0.08,
+  "duration_s": 1.2,
+  "gain_db": -3.0,
+  "hit_ms": 20,
+  "audible_ms": 1000
+ },
+ {
+  "file": "v2/whoosh-fast-01.wav",
+  "from": "raw/whoosh-fast-01.mp3",
+  "start_s": 0.05,
+  "duration_s": 0.5,
+  "gain_db": 20.0,
+  "hit_ms": 150,
+  "audible_ms": 480
+ },
+ {
+  "file": "v2/whoosh-fast-02.wav",
+  "from": "raw/whoosh-fast-02.mp3",
+  "start_s": 0.05,
+  "duration_s": 0.9,
+  "gain_db": 8.4,
+  "hit_ms": 200,
+  "audible_ms": 890
+ },
+ {
+  "file": "v2/swoosh-swipe-01.wav",
+  "from": "raw/swoosh-swipe-01.mp3",
+  "start_s": 0.0,
+  "duration_s": 0.66,
+  "gain_db": 25.8,
+  "hit_ms": 150,
+  "audible_ms": 650
+ },
+ {
+  "file": "v2/pop-01.wav",
+  "from": "raw/pop-01.mp3",
+  "start_s": 0.0,
+  "duration_s": 0.25,
+  "gain_db": 3.5,
+  "hit_ms": 0,
+  "audible_ms": 170
+ },
+ {
+  "file": "v2/pop-02.wav",
+  "from": "raw/pop-02.mp3",
+  "start_s": 0.0,
+  "duration_s": 0.149,
+  "gain_db": -1.8,
+  "hit_ms": 0,
+  "audible_ms": 130
+ },
+ {
+  "file": "v2/ding-notification-01.wav",
+  "from": "raw/ding-notification-01.mp3",
+  "start_s": 0.0,
+  "duration_s": 1.8,
+  "gain_db": 13.5,
+  "hit_ms": 0,
+  "audible_ms": 1480
+ },
+ {
+  "file": "v2/cash-register-01.wav",
+  "from": "raw/cash-register-01.mp3",
+  "start_s": 0.9,
+  "duration_s": 0.95,
+  "gain_db": 1.3,
+  "hit_ms": 100,
+  "audible_ms": 510
+ },
+ {
+  "file": "v2/keyboard-typing-01.wav",
+  "from": "raw/keyboard-typing-01.mp3",
+  "start_s": 0.0,
+  "duration_s": 1.5,
+  "gain_db": 1.7,
+  "hit_ms": null,
+  "audible_ms": 1460
+ },
+ {
+  "file": "v2/mouse-click-01.wav",
+  "from": "raw/mouse-click-01.mp3",
+  "start_s": 1.0,
+  "duration_s": 0.1,
+  "gain_db": 6.1,
+  "hit_ms": 0,
+  "audible_ms": 80
+ },
+ {
+  "file": "v2/camera-shutter-01.wav",
+  "from": "raw/camera-shutter-01.mp3",
+  "start_s": 3.2,
+  "duration_s": 0.6,
+  "gain_db": -3.0,
+  "hit_ms": 100,
+  "audible_ms": 460
+ },
+ {
+  "file": "v2/riser-01.wav",
+  "from": "raw/riser-01.mp3",
+  "start_s": 0.0,
+  "duration_s": 2.18,
+  "gain_db": 4.2,
+  "hit_ms": 1800,
+  "audible_ms": 2120
+ },
+ {
+  "file": "v2/reverse-swell-01.wav",
+  "from": "raw/reverse-swell-01.mp3",
+  "start_s": 0.0,
+  "duration_s": 3.06,
+  "gain_db": 6.7,
+  "hit_ms": 3030,
+  "audible_ms": 2940
+ },
+ {
+  "file": "v2/applause-01.wav",
+  "from": "raw/applause-01.mp3",
+  "start_s": 2.0,
+  "duration_s": 2.5,
+  "gain_db": 7.6,
+  "hit_ms": null,
+  "audible_ms": 2460
+ },
+ {
+  "file": "v2/crowd-wow-01.wav",
+  "from": "raw/crowd-wow-01.mp3",
+  "start_s": 0.0,
+  "duration_s": 3.0,
+  "gain_db": 3.8,
+  "hit_ms": null,
+  "audible_ms": 2980
+ },
+ {
+  "file": "v2/glitch-01.wav",
+  "from": "raw/glitch-01.mp3",
+  "start_s": 0.0,
+  "duration_s": 1.72,
+  "gain_db": 2.4,
+  "hit_ms": 0,
+  "audible_ms": 1520
+ },
+ {
+  "file": "v2/typewriter-ding-01.wav",
+  "from": "raw/typewriter-ding-01.mp3",
+  "start_s": 0.08,
+  "duration_s": 0.75,
+  "gain_db": -3.0,
+  "hit_ms": 20,
+  "audible_ms": 650
+ }
+]

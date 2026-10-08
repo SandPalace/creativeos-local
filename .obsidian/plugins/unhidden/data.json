@@ -1,0 +1,7 @@
+{
+  "revealedFolders": [".claude"],
+  "extensionMode": "allowlist",
+  "extensionAllowlist": ["json", "md"],
+  "excludedFolderNames": ["node_modules"],
+  "debugLogging": false
+}

@@ -8,6 +8,8 @@ allowed-tools: Read, Write
 
 ## Orden de operaciones
 
+0. **Sólo piezas en la columna verde del Flujo** (`estado: aprobada` **y** `aprobado_por` lleno).
+   Si falta la firma, no empieces: dile al director que la firme.
 1. **Lee la nota de la pieza** en `piezas/` (debe decir `estado: aprobada`; formato, aspecto, objetivo) y la marca en `brief.md`
    (colores en hex, tono).
 2. **Decide dónde irá el copy** antes de escribir el prompt: arriba, abajo, un lado. El prompt
@@ -17,13 +19,13 @@ allowed-tools: Read, Write
 
 | # | parte | ejemplo |
 |---|---|---|
-| 1 | Sujeto | a ceramic cup of black coffee on a wooden counter |
-| 2 | Acción / estado | steam rising, morning light hitting the rim |
-| 3 | Entorno | small specialty café, plants, blurred background |
+| 1 | Sujeto | a small robot kit with an ESP32 board on a classroom desk |
+| 2 | Acción / estado | LEDs glowing, wires neatly connected, half-assembled |
+| 3 | Entorno | bright makerspace, 3D printer and laptops blurred in the background |
 | 4 | Composición | subject in lower third, **clean empty space in the upper 40% for text** |
 | 5 | Luz | soft warm window light from the left, gentle shadows |
-| 6 | Estilo / cámara | editorial food photography, 50mm, shallow depth of field |
-| 7 | Paleta y formato | palette #3B2A20 #E8D9C4 #C86B3C, aspect ratio 4:5 |
+| 6 | Estilo / cámara | editorial product photography, 50mm, shallow depth of field |
+| 7 | Paleta y formato | palette <los hex de `marca` en hechos.md>, aspect ratio 4:5 |
 
 4. **Cierra con las restricciones** (siempre): `no text, no letters, no logos, no watermark, no
    people's faces`.
@@ -35,12 +37,13 @@ allowed-tools: Read, Write
    ```markdown
    ---
    tipo: creativo
-   cliente: cafe-norte
+   cliente: algolab
    pieza: "[[P01]]"
    version: v1
    modelo: <el que se usará>
    aspecto: "4:5"
    estado: propuesta-sin-revisar
+   imagen:
    aprobado_por:
    ---
 
@@ -52,8 +55,11 @@ allowed-tools: Read, Write
    ## Defectos medidos
    ```
 7. Cuando el director genere la imagen, guárdala **dentro de `creativos/`** con el nombre de la
-   nota (`P01_v1_A.png`) para que se vea en Obsidian, y anota los **defectos medidos** (manos raras,
+   nota (`P01_v1_A.png`) para que se vea en Obsidian, llena `imagen: "[[P01_v1_A.png]]"` (así
+   sale de portada en Tablero → Creativos), y anota los **defectos medidos** (manos raras,
    texto fantasma, color fuera de paleta). Honesto, no "quedó bien".
+8. El director revisa en **Inicio → Creativos**: si cambia el estado a `rechazada`, crea `_v2`
+   **desde el brief y la pieza**, no desde la v1, y anota qué cambió.
 
 ## Reglas que no se negocian
 
