@@ -54,7 +54,7 @@ clientes/<cliente>/    ← <cliente> en kebab-case: algolab, estudio-yoga-sur
 | `imagen` | Creativos (portada) | `"[[P01_v1_A.png]]"` — corchetes y comillas; el archivo dentro de la bóveda. |
 
 **Canales** (escríbelos así, siempre igual): `Instagram feed`, `Instagram reels`,
-`Instagram stories`, `TikTok`, `Facebook`, `WhatsApp`, `Google`, `Web`, `Email`.
+`Instagram stories`, `TikTok`, `YouTube Shorts`, `Facebook`, `WhatsApp`, `Google`, `Web`, `Email`.
 
 **Reglas de frontmatter:** va en los primeros bytes del archivo (nada antes del `---`); los enlaces
 dentro del frontmatter entre comillas (`pieza: "[[P01]]"`); un campo vacío se deja vacío
@@ -123,7 +123,7 @@ open "obsidian://open?path=$PWD/Calendario.md"
 | pieza | `propuesta` | agente | todos sus datos están `confirmado` |
 | pieza | `bloqueada` + `pregunta` | agente | depende de un dato `inferido` o `falta` |
 | pieza | `aprobada` + `aprobado_por` | **director** | arrastra la tarjeta a *aprobada* y firma |
-| pieza | `publicada` | **director** | ya salió (lo publica una persona, no un agente) |
+| pieza | `publicada` | **director** | ya la vio en su cuenta (aunque la haya subido el agente) |
 | creativo | `propuesta-sin-revisar` | agente | al guardar copy + prompts |
 | creativo | `aprobada` + `aprobado_por` | **director** | revisó la imagen o el clip |
 | creativo | `rechazada` | **director** | → el agente crea `_v2` desde el brief, no desde la v1 |
@@ -156,7 +156,7 @@ en el chat.
 | 3 | **Desbloquear** | CMO | `verificar-hechos` | fila `confirmado` en `hechos.md`; pieza → propuesta | la tarjeta roja pasa a azul | el dato lo da el dueño |
 | 4 | **Aprobar** | **director** | — | `estado: aprobada`, `aprobado_por` | Flujo, columna verde | su firma |
 | 5 | **Producir** | creativo (y `motion-editor` si pide el video terminado) | `verificar-hechos` → `guion-de-contenido` → `prompt-imagen` / `prompt-video`, o `motion-video` | `creativos/Pxx_v1.md` (+ archivos; el video: `Pxx_vN_video.mp4` + portada) | Creativos (amarillo) | revisa y aprueba o rechaza |
-| 6 | **Publicar** | **director** (o su equipo) | — | `estado: publicada` | Flujo, columna morada | — |
+| 6 | **Publicar** | cmo (con permiso por envío) o el director a mano | `publicar` | `## Publicación` + `enlace:` en la pieza | Flujo: el director la mueve a morada | autoriza cada envío; marca `publicada` |
 | 7 | **Medir** | analista | `metricas-sqlite` (opcional) | `datos/agencia.db` | — | — |
 | 8 | **Reportar** | analista | `reporte-html` | `reportes/<fecha>_<tipo>.html` | lo abre en el navegador | decide si lo manda al cliente |
 | 9 | **Cerrar** | CMO | `onboarding` | brief del siguiente periodo con lo aprendido | nuevo brief | aprueba el nuevo brief |

@@ -39,8 +39,12 @@ en Obsidian** (`open "obsidian://open?path=…"`, ver `boveda-obsidian` 2c): av�
 4. **Nunca pongas texto dentro de una imagen generada.** El prompt deja espacio limpio; el copy se
    compone después. Sin personas generadas reconocibles, nunca menores, sin logos de otras marcas.
 5. **Una vez que te mostré un archivo, no lo sobrescribas.** Crea `_v2`, `_v3`.
-6. **Nada se publica ni gasta dinero sin mí.** Si algún día conectas una cuenta de anuncios, todo
-   anuncio nace **pausado**: activarlo es mi firma.
+6. **Nada se publica ni gasta dinero sin mí.** Sólo subes creativos que firmé, cada envío pasa por la
+   ventana de permiso, y todo anuncio nace **pausado**: activarlo es mi firma.
+7. **Cuando te topes con algo, pídeme ayuda.** Falta una conexión, un permiso, un dato, un error que
+   no entiendes, una plataforma que rechaza un archivo: te detienes, me dices en simple qué pasó, qué
+   significa y qué necesito hacer yo (paso a paso), y me dejas un plan B. No busques otra ruta por tu
+   cuenta ni reintentes en bucle.
 
 ## El equipo
 
@@ -96,9 +100,9 @@ datos/               ← las dos bases + opcional: agencia.db (sqlite)
 evaluar (evaluar-boveda) → leer documentos (leer-documentos) → onboarding → **yo firmo el brief** → investigar (investigar-mercado) →
 calendario de las próximas semanas (calendario-de-contenido) → desbloquear (verificar-hechos) →
 **yo firmo las piezas en el Flujo** → creativos (verificar-hechos → guion-de-contenido → prompt-imagen / prompt-video, o el video terminado con `motion-editor`) →
-**yo firmo los creativos** → **yo publico** → medir (metricas-sqlite) → reporte (reporte-html) →
+**yo firmo los creativos** → publicar (publicar: tú subes con mi permiso en cada envío, o me dejas el paquete para subirlo yo) → medir (metricas-sqlite) → reporte (reporte-html) →
 cerrar (onboarding del siguiente periodo).
 Detalle de cada paso, qué deja y dónde lo veo: skill `boveda-obsidian`, sección 4.
 
-Todo es local. No hay conectores de pago en este kit; los posibles están en
-`Conectores para después.md`.
+Todo es local hasta que conectes una plataforma. Cómo conectar Meta, Instagram, TikTok, YouTube
+Shorts y Google Ads, paso a paso: `Conectores para después.md`.
