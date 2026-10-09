@@ -1,0 +1,62 @@
+# El equipo: lee el frontmatter de .claude/agents/*.md y .claude/skills/*/SKILL.md.
+# Requiere el plugin Unhidden (viene en .obsidian/plugins/), configurado para revelar sólo .claude.
+filters:
+  or:
+    - file.inFolder(".claude/agents")
+    - and:
+        - file.inFolder(".claude/skills")
+        - 'file.name == "SKILL"'
+
+formulas:
+  modelo_pill: |-
+    html("<span class='pill pill-modelo-" + model + "'>" + model + "</span>")
+
+properties:
+  note.name:
+    displayName: Nombre
+  note.description:
+    displayName: Cuándo se usa
+  formula.modelo_pill:
+    displayName: Modelo
+  note.tools:
+    displayName: Herramientas
+  note.allowed-tools:
+    displayName: Herramientas
+
+views:
+  - type: table
+    name: Agentes
+    filters:
+      and:
+        - file.inFolder(".claude/agents")
+    columnSize:
+      note.name: 150
+      formula.modelo_pill: 110
+      note.description: 820
+    order:
+      - name
+      - formula.modelo_pill
+      - description
+      - tools
+
+  - type: table
+    name: Skills
+    filters:
+      and:
+        - file.inFolder(".claude/skills")
+    columnSize:
+      note.name: 210
+      note.description: 870
+    order:
+      - name
+      - description
+      - allowed-tools
+
+  - type: table
+    name: Todo
+    order:
+      - name
+      - formula.modelo_pill
+      - description
+      - tools
+      - allowed-tools

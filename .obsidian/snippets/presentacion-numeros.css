@@ -1,0 +1,94 @@
+/* Número de diapositiva al nivel de las flechas y la barra de progreso.
+   Cada diapositiva lleva <span class="num" data-slide="n"> (invisible); :has() lee cuál está presente.
+   Generado para 85 diapositivas: si agregas o quitas, pide "renumera la presentación". */
+.num { display: none !important; }
+.reveal::after {
+  position: absolute; left: 28px; bottom: 18px; z-index: 30; pointer-events: none;
+  font-size: 15px; font-weight: 600; letter-spacing: .08em; font-variant-numeric: tabular-nums;
+  color: rgba(243, 235, 227, .6);
+}
+.reveal:has(.slides section.present [data-slide="1"])::after { content: "1 / 85"; }
+.reveal:has(.slides section.present [data-slide="2"])::after { content: "2 / 85"; }
+.reveal:has(.slides section.present [data-slide="3"])::after { content: "3 / 85"; }
+.reveal:has(.slides section.present [data-slide="4"])::after { content: "4 / 85"; }
+.reveal:has(.slides section.present [data-slide="5"])::after { content: "5 / 85"; }
+.reveal:has(.slides section.present [data-slide="6"])::after { content: "6 / 85"; }
+.reveal:has(.slides section.present [data-slide="7"])::after { content: "7 / 85"; }
+.reveal:has(.slides section.present [data-slide="8"])::after { content: "8 / 85"; }
+.reveal:has(.slides section.present [data-slide="9"])::after { content: "9 / 85"; }
+.reveal:has(.slides section.present [data-slide="10"])::after { content: "10 / 85"; }
+.reveal:has(.slides section.present [data-slide="11"])::after { content: "11 / 85"; }
+.reveal:has(.slides section.present [data-slide="12"])::after { content: "12 / 85"; }
+.reveal:has(.slides section.present [data-slide="13"])::after { content: "13 / 85"; }
+.reveal:has(.slides section.present [data-slide="14"])::after { content: "14 / 85"; }
+.reveal:has(.slides section.present [data-slide="15"])::after { content: "15 / 85"; }
+.reveal:has(.slides section.present [data-slide="16"])::after { content: "16 / 85"; }
+.reveal:has(.slides section.present [data-slide="17"])::after { content: "17 / 85"; }
+.reveal:has(.slides section.present [data-slide="18"])::after { content: "18 / 85"; }
+.reveal:has(.slides section.present [data-slide="19"])::after { content: "19 / 85"; }
+.reveal:has(.slides section.present [data-slide="20"])::after { content: "20 / 85"; }
+.reveal:has(.slides section.present [data-slide="21"])::after { content: "21 / 85"; }
+.reveal:has(.slides section.present [data-slide="22"])::after { content: "22 / 85"; }
+.reveal:has(.slides section.present [data-slide="23"])::after { content: "23 / 85"; }
+.reveal:has(.slides section.present [data-slide="24"])::after { content: "24 / 85"; }
+.reveal:has(.slides section.present [data-slide="25"])::after { content: "25 / 85"; }
+.reveal:has(.slides section.present [data-slide="26"])::after { content: "26 / 85"; }
+.reveal:has(.slides section.present [data-slide="27"])::after { content: "27 / 85"; }
+.reveal:has(.slides section.present [data-slide="28"])::after { content: "28 / 85"; }
+.reveal:has(.slides section.present [data-slide="29"])::after { content: "29 / 85"; }
+.reveal:has(.slides section.present [data-slide="30"])::after { content: "30 / 85"; }
+.reveal:has(.slides section.present [data-slide="31"])::after { content: "31 / 85"; }
+.reveal:has(.slides section.present [data-slide="32"])::after { content: "32 / 85"; }
+.reveal:has(.slides section.present [data-slide="33"])::after { content: "33 / 85"; }
+.reveal:has(.slides section.present [data-slide="34"])::after { content: "34 / 85"; }
+.reveal:has(.slides section.present [data-slide="35"])::after { content: "35 / 85"; }
+.reveal:has(.slides section.present [data-slide="36"])::after { content: "36 / 85"; }
+.reveal:has(.slides section.present [data-slide="37"])::after { content: "37 / 85"; }
+.reveal:has(.slides section.present [data-slide="38"])::after { content: "38 / 85"; }
+.reveal:has(.slides section.present [data-slide="39"])::after { content: "39 / 85"; }
+.reveal:has(.slides section.present [data-slide="40"])::after { content: "40 / 85"; }
+.reveal:has(.slides section.present [data-slide="41"])::after { content: "41 / 85"; }
+.reveal:has(.slides section.present [data-slide="42"])::after { content: "42 / 85"; }
+.reveal:has(.slides section.present [data-slide="43"])::after { content: "43 / 85"; }
+.reveal:has(.slides section.present [data-slide="44"])::after { content: "44 / 85"; }
+.reveal:has(.slides section.present [data-slide="45"])::after { content: "45 / 85"; }
+.reveal:has(.slides section.present [data-slide="46"])::after { content: "46 / 85"; }
+.reveal:has(.slides section.present [data-slide="47"])::after { content: "47 / 85"; }
+.reveal:has(.slides section.present [data-slide="48"])::after { content: "48 / 85"; }
+.reveal:has(.slides section.present [data-slide="49"])::after { content: "49 / 85"; }
+.reveal:has(.slides section.present [data-slide="50"])::after { content: "50 / 85"; }
+.reveal:has(.slides section.present [data-slide="51"])::after { content: "51 / 85"; }
+.reveal:has(.slides section.present [data-slide="52"])::after { content: "52 / 85"; }
+.reveal:has(.slides section.present [data-slide="53"])::after { content: "53 / 85"; }
+.reveal:has(.slides section.present [data-slide="54"])::after { content: "54 / 85"; }
+.reveal:has(.slides section.present [data-slide="55"])::after { content: "55 / 85"; }
+.reveal:has(.slides section.present [data-slide="56"])::after { content: "56 / 85"; }
+.reveal:has(.slides section.present [data-slide="57"])::after { content: "57 / 85"; }
+.reveal:has(.slides section.present [data-slide="58"])::after { content: "58 / 85"; }
+.reveal:has(.slides section.present [data-slide="59"])::after { content: "59 / 85"; }
+.reveal:has(.slides section.present [data-slide="60"])::after { content: "60 / 85"; }
+.reveal:has(.slides section.present [data-slide="61"])::after { content: "61 / 85"; }
+.reveal:has(.slides section.present [data-slide="62"])::after { content: "62 / 85"; }
+.reveal:has(.slides section.present [data-slide="63"])::after { content: "63 / 85"; }
+.reveal:has(.slides section.present [data-slide="64"])::after { content: "64 / 85"; }
+.reveal:has(.slides section.present [data-slide="65"])::after { content: "65 / 85"; }
+.reveal:has(.slides section.present [data-slide="66"])::after { content: "66 / 85"; }
+.reveal:has(.slides section.present [data-slide="67"])::after { content: "67 / 85"; }
+.reveal:has(.slides section.present [data-slide="68"])::after { content: "68 / 85"; }
+.reveal:has(.slides section.present [data-slide="69"])::after { content: "69 / 85"; }
+.reveal:has(.slides section.present [data-slide="70"])::after { content: "70 / 85"; }
+.reveal:has(.slides section.present [data-slide="71"])::after { content: "71 / 85"; }
+.reveal:has(.slides section.present [data-slide="72"])::after { content: "72 / 85"; }
+.reveal:has(.slides section.present [data-slide="73"])::after { content: "73 / 85"; }
+.reveal:has(.slides section.present [data-slide="74"])::after { content: "74 / 85"; }
+.reveal:has(.slides section.present [data-slide="75"])::after { content: "75 / 85"; }
+.reveal:has(.slides section.present [data-slide="76"])::after { content: "76 / 85"; }
+.reveal:has(.slides section.present [data-slide="77"])::after { content: "77 / 85"; }
+.reveal:has(.slides section.present [data-slide="78"])::after { content: "78 / 85"; }
+.reveal:has(.slides section.present [data-slide="79"])::after { content: "79 / 85"; }
+.reveal:has(.slides section.present [data-slide="80"])::after { content: "80 / 85"; }
+.reveal:has(.slides section.present [data-slide="81"])::after { content: "81 / 85"; }
+.reveal:has(.slides section.present [data-slide="82"])::after { content: "82 / 85"; }
+.reveal:has(.slides section.present [data-slide="83"])::after { content: "83 / 85"; }
+.reveal:has(.slides section.present [data-slide="84"])::after { content: "84 / 85"; }
+.reveal:has(.slides section.present [data-slide="85"])::after { content: "85 / 85"; }

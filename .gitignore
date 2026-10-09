@@ -6,3 +6,15 @@ datos/*.db
 .env
 .env.*
 .DS_Store
+
+# Lo que cada participante mete o genera: su negocio no se sube al repo
+documentos/*
+!documentos/LEEME.md
+clientes/*/
+
+# Estudio de video: dependencias y renders se crean en tu máquina
+node_modules/
+render/**/node_modules/
+__pycache__/
+out/
+clientes/*/videos/**/*.mp4

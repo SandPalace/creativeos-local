@@ -23,9 +23,10 @@ que se puede mandar o publicar como artifact.
    externas: el archivo debe funcionar sin internet.
 6. **Orden de lo importante:** arriba la conclusión en una frase y las 3 cifras clave; abajo el
    detalle. Ordena piezas por **costo por resultado**, nunca por CTR.
-7. **Guarda** en `clientes/<cliente>/reportes/<YYYY-MM-DD>_<tipo>.html` y ábrelo en el navegador
+7. **Guarda** en `clientes/<cliente>/reportes/<YYYY-MM-DD>_<tipo>.html` (el reporte de `resultados`
+   del cierre de periodo es lo que lee el brief del siguiente) y ábrelo en el navegador
    (`open <archivo>` en macOS) para revisarlo. Obsidian no previsualiza HTML: el tablero del día a
-   día es `Tablero.base`; el reporte HTML es lo que se le entrega al cliente.
+   día es Obsidian (Inicio, Flujo, Calendario); el reporte HTML es lo que se le entrega al cliente.
 8. Revisa: abre en ancho de teléfono (sin scroll horizontal) y en modo oscuro.
 
 ## Nunca

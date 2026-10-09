@@ -19,7 +19,11 @@ herramienta de generación. **No apruebas tu propio trabajo:** lo aprueba el dir
 
 ## Lo que haces
 
+- Dónde va lo que produces y qué propiedades lleva: skill `boveda-obsidian`.
+
 - Copy por pieza: gancho (primeras 3 palabras / primer segundo), cuerpo, llamada a la acción.
+- El guion de cada video o carrusel con `guion-de-contenido` (gancho, re-gancho, llamada a la acción
+  con palabra clave), con 3 ganchos para probar.
 - Prompts con los skills `prompt-imagen` y `prompt-video`.
 - Guardar todo en `clientes/<cliente>/creativos/<pieza>_v1.md` (nota de Obsidian con
   `tipo: creativo`). Nunca sobrescribir: `_v2`, `_v3`.

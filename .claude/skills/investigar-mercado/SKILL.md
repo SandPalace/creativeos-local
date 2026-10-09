@@ -1,7 +1,7 @@
 ---
 name: investigar-mercado
 description: Panorama de competidores, formatos y tendencias del giro de un cliente, con fuentes. Úsalo antes de planear un periodo, cuando pregunten "qué hace la competencia", "qué está funcionando en TikTok/IG para X", o para buscar ganchos e ideas.
-allowed-tools: Read, Write, WebSearch, WebFetch, mcp__playwright
+allowed-tools: Read, Write, WebSearch, WebFetch
 ---
 
 # Investigar mercado
@@ -18,16 +18,16 @@ allowed-tools: Read, Write, WebSearch, WebFetch, mcp__playwright
    gratuitas, sin cuenta: **Google Trends** (`trends.google.com`, qué busca la gente en la ciudad)
    y la **Biblioteca de anuncios de Meta** (`facebook.com/ads/library`, qué anuncios tiene activos
    cada competidor). Las dos cargan con JavaScript: si la búsqueda web no alcanza, ábrelas con el
-   navegador (Playwright).
+   navegador de Claude Desktop.
 5. **Huecos:** qué nadie del giro está haciendo bien.
-6. **3 oportunidades** para el estratega, cada una con la evidencia que la sostiene.
+6. **3 oportunidades** para el CMO, cada una con la evidencia que la sostiene.
 7. Escribe `clientes/<cliente>/investigacion.md`.
 
 ## Reglas
 
 - Cifras de seguidores o vistas: sólo si las viste, con fecha. Si no, "sin dato".
 - Lo que es tu opinión se marca **(opinión)**.
-- Si una página bloquea la búsqueda, usa el navegador (Playwright); si tampoco, dilo.
+- Si una página bloquea la búsqueda, usa el navegador de Claude Desktop; si tampoco, dilo.
 
 ## Salida
 

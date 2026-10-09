@@ -22,7 +22,7 @@ tarde o temprano dan números distintos.
    -- import_tmp no existe todavía: la 1a fila del CSV se vuelve los nombres de columna
    .import exporte.csv import_tmp
    INSERT OR REPLACE INTO metricas_diarias (cliente, pieza_id, fecha, canal, impresiones, clics, resultados, gasto, moneda)
-   SELECT 'cafe-norte', ad_name, date, 'meta', impressions, clicks, results, spend, 'MXN' FROM import_tmp;
+   SELECT 'algolab', ad_name, date, 'meta', impressions, clicks, results, spend, 'MXN' FROM import_tmp;
    DROP TABLE import_tmp;
    SQL
    ```
@@ -35,7 +35,7 @@ tarde o temprano dan números distintos.
           ROUND(SUM(gasto) / NULLIF(SUM(resultados), 0), 2) AS costo_por_resultado,
           ROUND(100.0 * SUM(clics) / NULLIF(SUM(impresiones), 0), 2) AS ctr
    FROM metricas_diarias
-   WHERE cliente = 'cafe-norte' AND moneda = 'MXN'
+   WHERE cliente = 'algolab' AND moneda = 'MXN'
    GROUP BY pieza_id
    ORDER BY costo_por_resultado IS NULL, costo_por_resultado;
    ```

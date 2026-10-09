@@ -1,0 +1,12 @@
+{
+  "showInlineTitle": true,
+  "propertiesInDocument": "visible",
+  "alwaysUpdateLinks": true,
+  "showUnsupportedFiles": true,
+  "userIgnoreFilters": [
+    "render/",
+    "productions/",
+    "node_modules/",
+    "out/"
+  ]
+}

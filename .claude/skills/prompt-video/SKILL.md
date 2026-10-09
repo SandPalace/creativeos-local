@@ -8,9 +8,13 @@ allowed-tools: Read, Write
 
 ## Orden de operaciones
 
+0. **Sólo piezas en la columna verde del Flujo** (`estado: aprobada` **y** `aprobado_por` lleno).
+   Si falta la firma, no empieces: dile al director que la firme.
 1. **Lee la nota de la pieza** en `piezas/` (debe decir `estado: aprobada`; formato, duración,
    canal) y la marca (`brief.md`).
-2. **Storyboard primero:** parte el video en tomas de 3–8 segundos. Una pieza de 15 s = 3–4 tomas.
+2. **Guion primero:** corre `guion-de-contenido` (gancho → enganche → bloques → re-gancho →
+   llamada a la acción). Las tomas salen de ese guion.
+2b. **Storyboard:** parte el video en tomas de 3–8 segundos. Una pieza de 15 s = 3–4 tomas.
    **Una toma = una generación.** Un prompt que pide tres escenas produce una mezcla de las tres.
 3. **Gancho en la toma 1.** El primer segundo decide si alguien se queda: movimiento, contraste o
    algo inesperado — no un logo.
@@ -18,11 +22,11 @@ allowed-tools: Read, Write
 
 | # | parte | ejemplo |
 |---|---|---|
-| 1 | Sujeto + acción | a barista pours latte art into a white cup |
-| 2 | Escena | small café counter, morning, plants in background |
+| 1 | Sujeto + acción | hands snap the last wire into a small robot, its LEDs light up |
+| 2 | Escena | classroom desk, laptops and a 3D printer in the background |
 | 3 | Cámara | close-up, slow push-in, eye level |
-| 4 | Movimiento y ritmo | liquid swirls slowly, steam drifts, calm pace |
-| 5 | Luz y estilo | warm natural window light, cinematic, shallow depth of field |
+| 4 | Movimiento y ritmo | the robot rolls forward a few centimeters, playful pace |
+| 5 | Luz y estilo | bright natural light, clean, shallow depth of field |
 | 6 | Técnico | 5 seconds, 9:16 vertical, no text on screen, no logos |
 
 5. **Rostros:** mejor manos, espaldas, producto. Una persona generada reconocible en un anuncio es

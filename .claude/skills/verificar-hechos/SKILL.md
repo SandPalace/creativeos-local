@@ -21,14 +21,21 @@ allowed-tools: Read, Grep, Bash
 ```markdown
 | afirmación en el copy | hechos.md | veredicto |
 |---|---|---|
-| "2x1 todos los martes" | promo_octubre: inferido | ⛔ preguntar al dueño |
+| "de 7 a 17 años" | publico: 8 a 15 años, confirmado | ⛔ no coincide: el rango es 8 a 15 |
+| "inscripción gratis" | no aparece | ⛔ preguntar al dueño |
 | "lunes 13 de octubre" | date → martes | ⛔ el 13 es martes |
 
-VEREDICTO: BLOQUEADA — 1 dato sin confirmar, 1 fecha incorrecta.
-Pregunta para el director: "¿La promo 2x1 aplica todos los martes de octubre?"
+VEREDICTO: BLOQUEADA — 1 dato distinto, 1 dato sin confirmar, 1 fecha incorrecta.
+Pregunta para el dueño: "¿La inscripción es gratis en octubre? ¿Para todos los cursos?"
 ```
 
-6. **Bloquea sólo esta pieza.** Las demás siguen.
+6. **Bloquea sólo esta pieza.** Las demás siguen. En la nota: `estado: bloqueada` y la pregunta
+   exacta en `pregunta` — así sale en rojo en el Flujo.
+7. **Desbloquea** cuando el director conteste: agrega o corrige la fila en `hechos.md` con
+   `confirmado` y la fuente (`director, chat <fecha>`), pasa la pieza a `propuesta` y vacía
+   `pregunta`. La tarjeta vuelve a la columna azul para que él la apruebe.
+8. **Auditoría de fechas:** en cada pieza que toques, `dia` debe ser el de `date` sobre `fecha`
+   (el director puede mover piezas en el Calendario). Si no coincide, corrígelo y avisa.
 
 ## Nunca
 
