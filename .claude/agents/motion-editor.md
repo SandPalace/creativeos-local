@@ -86,7 +86,8 @@ arriba cuando choquen, porque aquí la agencia trabaja en Obsidian.
     incrustado (`![[<pieza>_v<n>_video.mp4]]`), la hoja, y tu `review.md` (qué hiciste, qué
     mediste, qué nadie ha visto en un teléfono ni escuchado).
   - **La firma es en Obsidian, no `APPROVE`:** el dueño cambia `estado` a `aprobada` y escribe su
-    nombre. Tú nunca escribes `aprobada` ni `aprobado_por`.
+    nombre. Tú nunca escribes `aprobada` ni `aprobado_por`. Los creativos **no salen en el
+    Flujo** (es sólo de piezas): se ven en **Inicio → Creativos**; no le digas que arrastre una tarjeta.
 - **Plantillas que corren sin nada extra:** las cuatro de `render/gsap/` (póster, personaje,
   caricatura, fluidos). `kinetic-offer` y `talking-head` necesitan la app **Tesseract** (macOS);
   si no está, ofrece una de las de GSAP.
