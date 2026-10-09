@@ -402,7 +402,7 @@ Sin palabra clave no sabes de qué pieza vino el mensaje.
 
 ## Lección de guerra #3
 
-Una fe de erratas decía **"miércoles 27"**. El 27 era jueves.
+La fecha decía **"miércoles 27"**. El 27 era jueves.
 
 **El día se calcula, nunca se copia:** `date -j -f "%Y-%m-%d" 2026-08-27 "+%A"`
 
@@ -452,34 +452,11 @@ Mira cómo se llena `clientes/<tu-negocio>/hechos.md`
 
 ---
 
-## Ejercicio · El copy con trampa
-
-1. Escribe un anuncio de **tu** negocio con un dato que nunca le diste al CMO: una promo, un precio, un horario
-2. Pégalo: *"Revisa este anuncio antes de publicarlo: …"*
-3. Debe **bloquearlo** y preguntarte ese dato — no corregirlo solo
-
-<span class="num" data-slide="44"></span>
-
----
-
-## Así se ve
-
-| en el anuncio | en `hechos.md` | |
-|---|---|---|
-| "7 a 17 años" | 8 a 15 · confirmado | ⛔ |
-| "2x1 en octubre" | no aparece | ⛔ |
-
-*"¿Hay 2x1 en octubre? ¿Para todos los cursos?"*
-
-<span class="num" data-slide="45"></span>
-
----
-
 # 3 · Herramientas
 
 *3 de 5*
 
-<span class="num" data-slide="46"></span>
+<span class="num" data-slide="44"></span>
 
 ---
 
@@ -487,7 +464,7 @@ Mira cómo se llena `clientes/<tu-negocio>/hechos.md`
 
 Archivos · terminal · búsqueda web · navegador
 
-<span class="num" data-slide="47"></span>
+<span class="num" data-slide="45"></span>
 
 ---
 
@@ -497,7 +474,7 @@ Conectores a otras apps: Meta Ads, Drive, Gmail…
 
 Hoy, **ninguno**. Obsidian no lo necesita: son archivos.
 
-<span class="num" data-slide="48"></span>
+<span class="num" data-slide="46"></span>
 
 ---
 
@@ -505,7 +482,7 @@ Hoy, **ninguno**. Obsidian no lo necesita: son archivos.
 
 `.claude/settings.json`
 
-<span class="num" data-slide="49"></span>
+<span class="num" data-slide="47"></span>
 
 ---
 
@@ -515,7 +492,7 @@ Hoy, **ninguno**. Obsidian no lo necesita: son archivos.
 | `ask` | te pide permiso: **ésa es tu firma** |
 | `deny` | nunca |
 
-<span class="num" data-slide="50"></span>
+<span class="num" data-slide="48"></span>
 
 ---
 
@@ -523,7 +500,7 @@ Hoy, **ninguno**. Obsidian no lo necesita: son archivos.
 
 ## `settings.json` lo impone el sistema
 
-<span class="num" data-slide="51"></span>
+<span class="num" data-slide="49"></span>
 
 ---
 
@@ -535,7 +512,7 @@ En nuestra agencia, la documentación decía que las herramientas que gastan din
 
 **Lee `settings.json`, no el documento que habla de él.**
 
-<span class="num" data-slide="52"></span>
+<span class="num" data-slide="50"></span>
 
 ---
 
@@ -545,7 +522,7 @@ Cuando un agente crea un anuncio, lo deja apagado. No gasta un peso hasta que **
 
 Crear se puede deshacer. **Gastar, no.**
 
-<span class="num" data-slide="53"></span>
+<span class="num" data-slide="51"></span>
 
 ---
 
@@ -556,7 +533,7 @@ Crear se puede deshacer. **Gastar, no.**
 
 Dile **No**. Esa ventana es tu firma.
 
-<span class="num" data-slide="54"></span>
+<span class="num" data-slide="52"></span>
 
 ---
 
@@ -564,7 +541,7 @@ Dile **No**. Esa ventana es tu firma.
 
 *4 de 5*
 
-<span class="num" data-slide="55"></span>
+<span class="num" data-slide="53"></span>
 
 ---
 
@@ -578,7 +555,7 @@ Dile **No**. Esa ventana es tu firma.
 | **Estrategia** | el ritmo y qué pautar |
 | **Equipo** | tus agentes y sus recetas |
 
-<span class="num" data-slide="56"></span>
+<span class="num" data-slide="54"></span>
 
 ---
 
@@ -588,7 +565,7 @@ Dile **No**. Esa ventana es tu firma.
 
 Una dirección. Los agentes mueven hasta *propuesta*; **lo verde y lo morado son tuyos.**
 
-<span class="num" data-slide="57"></span>
+<span class="num" data-slide="55"></span>
 
 ---
 
@@ -598,7 +575,7 @@ Una dirección. Los agentes mueven hasta *propuesta*; **lo verde y lo morado son
 
 Ya viene en tu repo: la nota **Estrategia de contenido**. El CMO la lee antes de armar tu calendario.
 
-<span class="num" data-slide="58"></span>
+<span class="num" data-slide="56"></span>
 
 ---
 
@@ -613,7 +590,7 @@ Ya viene en tu repo: la nota **Estrategia de contenido**. El CMO la lee antes de
 
 *Pasar de 1–2 a 3–5 por semana más que duplica el crecimiento (Buffer, 2 M de publicaciones).*
 
-<span class="num" data-slide="59"></span>
+<span class="num" data-slide="57"></span>
 
 ---
 
@@ -621,7 +598,7 @@ Ya viene en tu repo: la nota **Estrategia de contenido**. El CMO la lee antes de
 
 le gana a uno rápido que se abandona en la tercera semana.
 
-<span class="num" data-slide="60"></span>
+<span class="num" data-slide="58"></span>
 
 ---
 
@@ -636,7 +613,7 @@ le gana a uno rápido que se abandona en la tercera semana.
 | **Vie** | Historias · detrás de cámaras |
 | **Sáb** | Post · oferta con palabra clave |
 
-<span class="num" data-slide="61"></span>
+<span class="num" data-slide="59"></span>
 
 ---
 
@@ -646,7 +623,7 @@ le gana a uno rápido que se abandona en la tercera semana.
 
 a cámara · con imágenes de apoyo · texto + voz
 
-<span class="num" data-slide="62"></span>
+<span class="num" data-slide="60"></span>
 
 ---
 
@@ -656,7 +633,7 @@ a cámara · con imágenes de apoyo · texto + voz
 
 **archiva** los de abajo → **pauta** los de arriba → **itera**
 
-<span class="num" data-slide="63"></span>
+<span class="num" data-slide="61"></span>
 
 ---
 
@@ -668,7 +645,7 @@ a cámara · con imágenes de apoyo · texto + voz
 
 **Nunca:** likes ni CTR
 
-<span class="num" data-slide="64"></span>
+<span class="num" data-slide="62"></span>
 
 ---
 
@@ -678,7 +655,7 @@ a cámara · con imágenes de apoyo · texto + voz
 
 **Meta · Trial Reels y prueba A/B:** pruebas antes de mostrarlo a todos; el ganador se sube como anuncio
 
-<span class="num" data-slide="65"></span>
+<span class="num" data-slide="63"></span>
 
 ---
 
@@ -688,7 +665,7 @@ a cámara · con imágenes de apoyo · texto + voz
 
 Te pregunta el **ritmo** · míralo en **Flujo** y **Calendario**
 
-<span class="num" data-slide="66"></span>
+<span class="num" data-slide="64"></span>
 
 ---
 
@@ -698,7 +675,7 @@ Te pregunta el **ritmo** · míralo en **Flujo** y **Calendario**
 
 El CMO cuenta publicaciones e historias por semana, te dice qué ritmo cumple y qué falta — y te propone **una sesión de grabación** para llenar el hueco.
 
-<span class="num" data-slide="67"></span>
+<span class="num" data-slide="65"></span>
 
 ---
 
@@ -708,7 +685,7 @@ El CMO cuenta publicaciones e historias por semana, te dice qué ritmo cumple y 
 
 Propuso: grabar el 13 o 14 de octubre · 6–8 clips · el reel de P03 primero en orgánico con **3 ganchos** · **pautar sólo el que gane**.
 
-<span class="num" data-slide="68"></span>
+<span class="num" data-slide="66"></span>
 
 ---
 
@@ -716,7 +693,7 @@ Propuso: grabar el 13 o 14 de octubre · 6–8 clips · el reel de P03 primero e
 
 Arrastra 2 piezas a **aprobada** y escribe tu nombre en `aprobado_por`
 
-<span class="num" data-slide="69"></span>
+<span class="num" data-slide="67"></span>
 
 ---
 
@@ -726,7 +703,7 @@ Arrastra 2 piezas a **aprobada** y escribe tu nombre en `aprobado_por`
 
 Míralos en **Inicio → Creativos**
 
-<span class="num" data-slide="70"></span>
+<span class="num" data-slide="68"></span>
 
 ---
 
@@ -736,7 +713,7 @@ Míralos en **Inicio → Creativos**
 
 Gancho · bloques · re-gancho · **CTA con palabra clave** — y 3 ganchos distintos para probar en orgánico.
 
-<span class="num" data-slide="71"></span>
+<span class="num" data-slide="69"></span>
 
 ---
 
@@ -746,7 +723,7 @@ Otro estudio nos pasó **un agente y 5 skills** para hacer video.
 
 Copiamos la carpeta y Claude **ya sabe** editar video.
 
-<span class="num" data-slide="72"></span>
+<span class="num" data-slide="70"></span>
 
 ---
 
@@ -761,7 +738,7 @@ Copiamos la carpeta y Claude **ya sabe** editar video.
 
 **Es el mismo truco del repo: entrenar a Claude con archivos.**
 
-<span class="num" data-slide="73"></span>
+<span class="num" data-slide="71"></span>
 
 ---
 
@@ -773,7 +750,7 @@ Usa el guion ya escrito, revisa los cuadros antes del render y te deja el video 
 
 *Opcional: necesita Node, Python y ffmpeg (`render/LEEME-kit-video.md`).*
 
-<span class="num" data-slide="74"></span>
+<span class="num" data-slide="72"></span>
 
 ---
 
@@ -781,7 +758,7 @@ Usa el guion ya escrito, revisa los cuadros antes del render y te deja el video 
 
 El copy se pone después, encima.
 
-<span class="num" data-slide="75"></span>
+<span class="num" data-slide="73"></span>
 
 ---
 
@@ -795,7 +772,7 @@ El copy se pone después, encima.
 
 **El CTR miente:** 6% de CTR costó **337.6** por conversación.
 
-<span class="num" data-slide="76"></span>
+<span class="num" data-slide="74"></span>
 
 ---
 
@@ -805,7 +782,7 @@ El copy se pone después, encima.
 
 Un HTML con cada número y su fuente. Si no hay dato: **"sin dato"**.
 
-<span class="num" data-slide="77"></span>
+<span class="num" data-slide="75"></span>
 
 ---
 
@@ -813,7 +790,7 @@ Un HTML con cada número y su fuente. Si no hay dato: **"sin dato"**.
 
 *5 de 5*
 
-<span class="num" data-slide="78"></span>
+<span class="num" data-slide="76"></span>
 
 ---
 
@@ -821,13 +798,13 @@ Un HTML con cada número y su fuente. Si no hay dato: **"sin dato"**.
 
 Izquierda: **Claude Desktop** · Derecha: **Obsidian**
 
-<span class="num" data-slide="79"></span>
+<span class="num" data-slide="77"></span>
 
 ---
 
 # Qué sigue
 
-<span class="num" data-slide="80"></span>
+<span class="num" data-slide="78"></span>
 
 ---
 
@@ -835,7 +812,7 @@ Izquierda: **Claude Desktop** · Derecha: **Obsidian**
 
 con tu negocio real
 
-<span class="num" data-slide="81"></span>
+<span class="num" data-slide="79"></span>
 
 ---
 
@@ -843,7 +820,7 @@ con tu negocio real
 
 Empieza leyendo; luego publica **con tu firma**.
 
-<span class="num" data-slide="82"></span>
+<span class="num" data-slide="80"></span>
 
 ---
 
@@ -859,7 +836,7 @@ Empieza leyendo; luego publica **con tu firma**.
 
 Paso a paso para conectar cada una: **Conectores para después** · el skill `publicar`
 
-<span class="num" data-slide="83"></span>
+<span class="num" data-slide="81"></span>
 
 ---
 
@@ -871,7 +848,7 @@ Falta una conexión, un permiso, un error que no entiende:
 
 No busca otra ruta por su cuenta.
 
-<span class="num" data-slide="84"></span>
+<span class="num" data-slide="82"></span>
 
 ---
 
@@ -879,16 +856,16 @@ No busca otra ruta por su cuenta.
 
 `sqlite` · publicar desde el agente · plataforma compartida
 
-<span class="num" data-slide="85"></span>
+<span class="num" data-slide="83"></span>
 
 ---
 
 # Ningún agente inventa un dato del cliente.
 
-<span class="num" data-slide="86"></span>
+<span class="num" data-slide="84"></span>
 
 ---
 
 *Gracias.*
 
-<span class="num" data-slide="87"></span>
+<span class="num" data-slide="85"></span>
