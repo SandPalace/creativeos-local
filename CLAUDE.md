@@ -90,7 +90,6 @@ clientes/<cliente>/
 knowledge/ · render/ ← el estudio de video de motion-editor (oficio, plantillas, renderer)
 out/                 ← su taller: cuadros y mezclas (Obsidian y git lo ignoran)
 documentos/          ← copias de mis PDFs, imágenes, Word, CSV: la materia prima de hechos.md
-ejercicios/          ← material del taller
 plantillas/           ← brief.md · hechos.md · reporte.html (se copian, no se editan)
 datos/               ← las dos bases + opcional: agencia.db (sqlite)
 ```

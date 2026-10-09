@@ -91,8 +91,5 @@ cssclasses: tablero
 >> [!atajo|presentacion] [[Presentación]]
 >> Las diapositivas del taller: comando *Start presentation*.
 >
->> [!atajo|cliente] [[ejercicios/copy-con-trampa|Copy con trampa]]
->> El ejercicio de verificar hechos.
->
 >> [!atajo|conectores] [[Conectores para después|Conectores]]
 >> Para cuando la agencia crezca.
