@@ -324,7 +324,7 @@ Obsidian → **Equipo**: 5 agentes y 18 skills, leídos de `.claude/`
 | **investigador** | mercado y competencia, siempre con fuente |
 | **creativo** | guion, copy y prompts de piezas firmadas |
 | **analista** | números por costo por resultado · el reporte |
-| **motion-editor** | el video terminado · llegó de otro equipo |
+| **motion-editor** | el video terminado de una pieza firmada |
 
 <span class="num" data-slide="32"></span>
 
