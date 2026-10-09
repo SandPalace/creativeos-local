@@ -205,7 +205,7 @@ Tú pones el 20%: **tus documentos, tus respuestas y tus firmas.**
 ## Paso 2 · Clona
 
 ```bash
-git clone https://github.com/kikirrins/creativeos-local.git ~/mi-agencia
+git clone https://github.com/SandPalace/creativeos-local.git ~/mi-agencia
 ```
 
 <span class="num" data-slide="20"></span>

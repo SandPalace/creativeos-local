@@ -31,7 +31,7 @@ Detalle, plantillas y licencias: `render/LEEME-kit-video.md`.
 
 1. **Clona el repo** (Terminal):
    ```bash
-   git clone https://github.com/kikirrins/creativeos-local.git ~/mi-agencia
+   git clone https://github.com/SandPalace/creativeos-local.git ~/mi-agencia
    ```
    Sin git: descomprime `mi-agencia.zip` en `~/mi-agencia`.
 2. **Obsidian** → *Abrir carpeta como bóveda* → `~/mi-agencia`. Cuando pregunte, elige **confiar en
