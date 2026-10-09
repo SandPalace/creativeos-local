@@ -52,7 +52,7 @@ lado a lado** y mira cómo se llena Obsidian mientras contestas.
 - **Pantallas** (en *Marcadores*, en orden): Inicio → Flujo → Calendario → Equipo → Presentación →
   Conectores.
 - **El equipo** vive en `.claude/` y lo ves en **Equipo**: 5 agentes (cmo, investigador, creativo,
-  analista, motion-editor) y 17 skills. En Claude Desktop, escribe `/` para ver los skills.
+  analista, motion-editor) y 18 skills. En Claude Desktop, escribe `/` para ver los skills.
 - **Dos plugins de la comunidad** ya instalados en `.obsidian/plugins/`: *Calendar Bases* (la
   cuadrícula del mes) y *Unhidden* (muestra la carpeta `.claude` —y sólo ésa— para la página
   Equipo). Por eso Obsidian pide confiar al abrir.

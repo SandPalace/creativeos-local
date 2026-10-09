@@ -140,7 +140,7 @@ Claude no improvisa. **Sigue lo que está escrito.**
 |---|---|
 | `CLAUDE.md` | las reglas de tu agencia: quién firma qué |
 | `.claude/agents/` | 5 roles: **CMO** · investigador · creativo · analista · motion-editor |
-| `.claude/skills/` | **17 recetas** con su orden fijo |
+| `.claude/skills/` | **18 recetas** con su orden fijo |
 | `.claude/settings.json` | los permisos: lo que nunca hace sin ti |
 | `plantillas/` | brief · hechos · reporte |
 | `documentos/` | lo que **tú** le das |
@@ -151,7 +151,7 @@ Claude no improvisa. **Sigue lo que está escrito.**
 
 ---
 
-## Las 17 recetas, en el orden del trabajo
+## Las 18 recetas, en el orden del trabajo
 
 | | |
 |---|---|
@@ -160,6 +160,7 @@ Claude no improvisa. **Sigue lo que está escrito.**
 | **Cuidar** | verificar-hechos |
 | **Crear** | guion-de-contenido · prompt-imagen · prompt-video |
 | **Video** | motion-video · gsap-motion · sound-design · talking-head-edit · tesseract-motion |
+| **Publicar** | publicar |
 | **Medir** | metricas-sqlite · reporte-html |
 | **Mapa** | boveda-obsidian |
 
@@ -309,7 +310,7 @@ Siete agentes sin frontmatter. Nunca cargaron. Nadie lo notó.
 
 ## Paso · Conoce a tu equipo
 
-Obsidian → **Equipo**: 5 agentes y 17 skills, leídos de `.claude/`
+Obsidian → **Equipo**: 5 agentes y 18 skills, leídos de `.claude/`
 
 <span class="num" data-slide="31"></span>
 
@@ -838,11 +839,39 @@ con tu negocio real
 
 ---
 
-## 2 · Conecta sólo lectura
+## 2 · Conecta tus plataformas
 
-Meta Ads · Drive · Gmail en borrador
+Empieza leyendo; luego publica **con tu firma**.
 
 <span class="num" data-slide="82"></span>
+
+---
+
+## Publicar, con tu firma en cada envío
+
+| | el agente | tú |
+|---|---|---|
+| **Anuncios de Meta** | los crea **pausados** | activas y das presupuesto |
+| **Instagram** | publica lo que firmaste | autorizas el envío |
+| **TikTok** | lo manda a **borradores** | lo publicas desde la app |
+| **YouTube Shorts** | lo sube **privado** | lo haces público |
+| **Google Ads** | sólo lee | creas el anuncio |
+
+Paso a paso para conectar cada una: **Conectores para después** · el skill `publicar`
+
+<span class="num" data-slide="83"></span>
+
+---
+
+## Cuando se topa, te pide ayuda
+
+Falta una conexión, un permiso, un error que no entiende:
+
+**se detiene**, te dice qué pasó y qué necesita de ti — y te deja el plan B para subirlo a mano.
+
+No busca otra ruta por su cuenta.
+
+<span class="num" data-slide="84"></span>
 
 ---
 
@@ -850,16 +879,16 @@ Meta Ads · Drive · Gmail en borrador
 
 `sqlite` · publicar desde el agente · plataforma compartida
 
-<span class="num" data-slide="83"></span>
+<span class="num" data-slide="85"></span>
 
 ---
 
 # Ningún agente inventa un dato del cliente.
 
-<span class="num" data-slide="84"></span>
+<span class="num" data-slide="86"></span>
 
 ---
 
 *Gracias.*
 
-<span class="num" data-slide="85"></span>
+<span class="num" data-slide="87"></span>

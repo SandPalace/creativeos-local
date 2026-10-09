@@ -3,7 +3,7 @@ cssclasses: tablero
 ---
 
 > [!portada|equipo] El equipo
-> Cinco agentes y diecisiete skills. Viven en `.claude/` — la carpeta que lee Claude Desktop. Lo que ves
+> Cinco agentes y dieciocho skills. Viven en `.claude/` — la carpeta que lee Claude Desktop. Lo que ves
 > aquí **es** su definición: haz clic en un nombre para abrir el archivo.
 > El quinto, **motion-editor**, y sus cinco skills de video llegaron de otro equipo (AI Studios):
 > se copiaron sus archivos y Claude aprendió el oficio.

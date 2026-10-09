@@ -21,7 +21,10 @@
       "Bash(ffprobe *)",
       "Bash(node -v)",
       "Bash(mkdir *)",
-      "Bash(cp *)"
+      "Bash(cp *)",
+      "mcp__google-ads__list_accessible_customers",
+      "mcp__google-ads__search",
+      "mcp__google-ads__get_resource_metadata"
     ],
     "ask": [
       "Bash(git push *)",
@@ -34,7 +37,12 @@
       "mcp__meta-ads__ads_create_campaign",
       "mcp__meta-ads__ads_create_ad_set",
       "mcp__meta-ads__ads_create_ad",
-      "mcp__meta-ads__ads_boost_ig_post"
+      "mcp__meta-ads__ads_boost_ig_post",
+      "mcp__meta-ads__ads_create_creative",
+      "mcp__meta-ads__ads_creative_update",
+      "mcp__meta-ads__ads_creative_upload_media",
+      "mcp__meta-ads__ads_creative_upload_local_image",
+      "Bash(curl *)"
     ],
     "deny": [
       "Read(./.env)",
