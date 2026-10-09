@@ -140,7 +140,7 @@ Claude no improvisa. **Sigue lo que está escrito.**
 |---|---|
 | `CLAUDE.md` | las reglas de tu agencia: quién firma qué |
 | `.claude/agents/` | 5 roles: **CMO** · investigador · creativo · analista · motion-editor |
-| `.claude/skills/` | **16 recetas** con su orden fijo |
+| `.claude/skills/` | **17 recetas** con su orden fijo |
 | `.claude/settings.json` | los permisos: lo que nunca hace sin ti |
 | `plantillas/` | brief · hechos · reporte |
 | `documentos/` | lo que **tú** le das |
@@ -151,7 +151,7 @@ Claude no improvisa. **Sigue lo que está escrito.**
 
 ---
 
-## Las 16 recetas, en el orden del trabajo
+## Las 17 recetas, en el orden del trabajo
 
 | | |
 |---|---|
@@ -159,7 +159,7 @@ Claude no improvisa. **Sigue lo que está escrito.**
 | **Planear** | investigar-mercado · calendario-de-contenido |
 | **Cuidar** | verificar-hechos |
 | **Crear** | guion-de-contenido · prompt-imagen · prompt-video |
-| **Video** | motion-video · gsap-motion · sound-design · talking-head-edit |
+| **Video** | motion-video · gsap-motion · sound-design · talking-head-edit · tesseract-motion |
 | **Medir** | metricas-sqlite · reporte-html |
 | **Mapa** | boveda-obsidian |
 
@@ -309,7 +309,7 @@ Siete agentes sin frontmatter. Nunca cargaron. Nadie lo notó.
 
 ## Paso · Conoce a tu equipo
 
-Obsidian → **Equipo**: 5 agentes y 16 skills, leídos de `.claude/`
+Obsidian → **Equipo**: 5 agentes y 17 skills, leídos de `.claude/`
 
 <span class="num" data-slide="31"></span>
 
@@ -741,7 +741,7 @@ Gancho · bloques · re-gancho · **CTA con palabra clave** — y 3 ganchos dist
 
 ## Un agente que llegó de otro equipo
 
-Otro estudio nos pasó **un agente y 4 skills** para hacer video.
+Otro estudio nos pasó **un agente y 5 skills** para hacer video.
 
 Copiamos la carpeta y Claude **ya sabe** editar video.
 
@@ -754,9 +754,9 @@ Copiamos la carpeta y Claude **ya sabe** editar video.
 | | |
 |---|---|
 | `.claude/agents/motion-editor.md` | el editor de video |
-| `.claude/skills/` | motion-video · gsap-motion · sound-design · talking-head-edit |
+| `.claude/skills/` | motion-video · gsap-motion · sound-design · talking-head-edit · tesseract-motion |
 | `knowledge/` | lo que aprendió en piezas reales |
-| `render/` | plantillas: póster animado, personaje, caricatura |
+| `render/` | plantillas: póster animado, personaje, caricatura · efectos de sonido |
 
 **Es el mismo truco del repo: entrenar a Claude con archivos.**
 

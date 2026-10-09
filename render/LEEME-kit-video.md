@@ -40,7 +40,7 @@ path the agent and the skills cite will resolve.
 | Python 3.11+ with numpy and scipy | `python3 -m pip install numpy scipy` | scores, voice analysis, SFX pack |
 | ffmpeg 7+ | `brew install ffmpeg` | encoding, loudness, contact sheets |
 | Tesseract app (`tsrct` 0.3.1) | tesseract app, macOS | kinetic-offer, talking-head, editable `.tsrct` |
-| Tesseract skills | `npx skills add mirage-hq/Tesseract` | `tesseract-motion` (its `tesseract_sound.py` makes the procedural SFX presets) and related skills |
+| Tesseract skills | **`tesseract-motion` ya viene en `.claude/skills/`** (su `tesseract_sound.py` hace los efectos; sólo Python). Los demás: `npx skills add mirage-hq/Tesseract` | efectos de sonido · plantillas Tesseract |
 | Xcode command line tools | `xcode-select --install` | person matte (Swift + Apple Vision) for talking-head cutouts |
 | Remotion (optional) | `npx skills add remotion-dev/skills` | flyers and clip assembly; not part of this kit |
 

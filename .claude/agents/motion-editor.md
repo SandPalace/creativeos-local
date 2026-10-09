@@ -91,8 +91,9 @@ arriba cuando choquen, porque aquí la agencia trabaja en Obsidian.
 - **Plantillas que corren sin nada extra:** las cuatro de `render/gsap/` (póster, personaje,
   caricatura, fluidos). `kinetic-offer` y `talking-head` necesitan la app **Tesseract** (macOS);
   si no está, ofrece una de las de GSAP.
-- **Sonido:** los efectos necesitan el skill `tesseract-motion` (`npx skills add mirage-hq/Tesseract`).
-  Si no está, renderiza con `--no-audio` y dilo; la música sí se genera con Python.
+- **Sonido:** música y efectos se sintetizan con Python. Los efectos salen de
+  `.claude/skills/tesseract-motion/scripts/tesseract_sound.py` (copia incluida en el kit; no
+  necesita la app Tesseract). Además están los efectos grabados CC0 de `productions/…/sfx-library/v2/`.
 - **Instalar es del dueño.** Antes de renderizar revisa `node -v`, `ffmpeg -version`,
   `python3 -c "import numpy"` y `render/gsap/node_modules`. Si algo falta, dale el comando exacto
   (sección *Install* de `render/LEEME-kit-video.md`) y explícale para qué es; esos comandos te
